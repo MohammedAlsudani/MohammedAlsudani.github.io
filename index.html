@@ -6,166 +6,144 @@
     body {
       background-color: #F2F2F2;
       font-family: 'Arial', sans-serif;
-      color: #333333;
+      color: #555555; /* Changed text color to a darker shade */
       margin: 0;
       padding: 0;
     }
-css
-Copy code
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #FFFFFF;
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
-}
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
 
-.fadeIn {
-  animation-name: fadeIn;
-  animation-duration: 2s;
-}
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
 
-h1, h2, h3 {
-  font-family: 'Verdana', sans-serif;
-  color: #0891b2;
-  text-align: center;
-  margin-bottom: 10px;
-}
+    .fadeIn {
+      animation-name: fadeIn;
+      animation-duration: 2s;
+    }
 
-p {
-  line-height: 1.5;
-  text-align: center;
-}
+    h1, h2, h3 {
+      font-family: 'Verdana', sans-serif;
+      color: #0891b2;
+      text-align: center; /* Moved text alignment to the CSS */
+    }
 
-ul {
-  list-style-type: disc;
-  padding-left: 20px;
-  text-align: center;
-}
+    p {
+      line-height: 1.5;
+      text-align: center; /* Moved text alignment to the CSS */
+    }
 
-ul li {
-  margin-bottom: 10px;
-}
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+      text-align: center; /* Moved text alignment to the CSS */
+    }
 
-a {
-  color: #0891b2;
-  text-decoration: none;
-}
+    ul li {
+      margin-bottom: 10px;
+    }
 
-a:hover {
-  text-decoration: underline;
-}
+    a {
+      color: #0891b2;
+      text-decoration: none;
+    }
 
-.profile-image {
-  display: block;
-  margin: 20px auto;
-  border-radius: 50%;
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  border: 5px solid #0891b2;
-}
+    a:hover {
+      text-decoration: underline;
+    }
 
-.skills-container {
-  margin-bottom: 30px;
-}
+    .profile-image {
+      display: block;
+      margin: 20px auto;
+      border-radius: 50%;
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border: 5px solid #0891b2;
+    }
+    
+    /* Added styling for the skills and socials sections */
+    .skills {
+      font-size: 18px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
 
-.skills-container p {
-  text-align: left;
-}
-
-.socials-container {
-  margin-bottom: 30px;
-}
-
-.socials-container p {
-  text-align: center;
-}
-
-.badges-container {
-  text-align: center;
-}
-
-.badges-container p {
-  text-align: center;
-}
-
-.github-stats {
-  margin-top: 30px;
-  text-align: center;
-}
-
-.github-stats p {
-  text-align: center;
-}
+    .socials {
+      font-size: 18px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
   </style>
 </head>
 <body>
   <div class="container fadeIn">
-    <h1 style="font-size: 36px;">Hi <img class="profile-image" src="https://avatars.githubusercontent.com/u/43975379?s=400&u=9855e733a152bcc48d1b726985ed8a2ad194bf47&v=4" alt="Hi GIF" /> My name is Mohammed Alsudani</h1>
-    <h2 style="font-size: 24px;">Senior Android Developer</h2>
+    <h1>Hi <img class="profile-image" src="https://avatars.githubusercontent.com/u/43975379?s=400&u=9855e733a152bcc48d1b726985ed8a2ad194bf47&v=4" alt="Hi GIF" /> My name is Mohammed Alsudani</h1>
+    <h2>Senior Android Developer</h2>
     <p>
       Highly skilled in native app development with 7+ years of experience designing, building, and customizing android apps for various domains such as Hotel Management, Freight forwarding & shipping software solutions, Payment System, Doctor Booking, Health, and Fitness, Food Industry, Social Media Apps, Dating App, Productivity Apps, Service Providers, etc.
     </p>
-    <div class="skills-container">
-      <h3 style="font-size: 20px;">Skills</h3>
-      <p>
-        ❅ Kotlin<br>
-        ❅ Java<br>
-        ❅ Android Studio<br>
-        ❅ MVVM Architecture<br>
-        ❅ Retrofit<br>
-        ❅ Dagger Hilt<br>
-        ❅ RxJava<br>
-        ❅ LiveData<br>
-        ❅ Room Database<br>
-        ❅ Firebase<br>
-        ❅ Google Maps API<br>
-        ❅ Material Design<br>
-        ❅ Unit Testing, UI Testing, Performance Testing (Robolectric, Espresso, Mockito, Firebase Test Lab)<br>
-        ❅ Data Structures and Algorithms<br>
-        ❅ OOP Patterns<br>
-        ❅ Spring Framework<br>
-        ❅ JavaFX<br>
-        ❅ Angular<br>
-        ❅ HTML<br>
-        ❅ CSS<br>
-        ❅ JavaScript<br>
-        ❅ TypeScript<br>
-        ❅ React Native<br>
-        ❅ Git (Bitbucket, GitHub, GitLab)<br>
-        ❅ Agile Methodology<br>
-      </p>
-    </div>
-    <div class="socials-container">
-      <h3 style="font-size: 20px;">Socials</h3>
-      <p>
-        <a href="https://www.github.com/MohammedAlsudani"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/github.svg" width="32" height="32" /></a>
-        <a href="https://www.linkedin.com/in/mohammed-alsudani-259a28152"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/linkedin.svg" width="32" height="32" /></a>
-      </p>
-    </div>
-    <div class="badges-container">
-      <h3 style="font-size: 20px;">Badges</h3>
-      <p>
-        <b>My GitHub Stats</b>
-      </p>
-      <p class="github-stats">
-        <a href="http://www.github.com/MohammedAlsudani"><img src="https://github-readme-stats.vercel.app/api?username=MohammedAlsudani&show_icons=true&hide=&count_private=true&title_color=0891b2&text_color=ffffff&icon_color=0891b2&bg_color=1c1917&hide_border=true&show_icons=true" alt="MohammedAlsudani's GitHub stats" /></a>
-        <br>
-        <a href="http://www.github.com/MohammedAlsudani"><img src="https://github-readme-streak-stats.herokuapp.com/?user=MohammedAlsudani&stroke=ffffff&background=1c1917&ring=0891b2&fire=0891b2&currStreakNum=ffffff&currStreakLabel=0891b2&sideNums=ffffff&sideLabels=ffffff&dates=ffffff&hide_border=true" /></a>
-        <br>
-        <a href="http://www.github.com/MohammedAlsudani"><img src="https://github-readme-activity-graph.cyclic.app/graph?username=MohammedAlsudani&bg_color=1c1917&color=ffffff&line=0891b2&point=ffffff&area_color=1c1917&area=true&hide_border=true&custom_title=GitHub%20Commits%20Graph" alt="GitHub Commits Graph" /></a>
-      </p>
-    </div>
+    <ul>
+      <li>🌍 I'm based in Moldova, Chișinău</li>
+      <li>🖥️ See my portfolio at <a href="http://materialuiux.com/">MaterialUiUx</a></li>
+      <li>✉️ You can contact me at <a href="mailto:alsudanimohammed1@gmail.com">alsudanimohammed1@gmail.com</a></li>
+      <li>👨‍💻 #SelfTaught Developer</li>
+      <li>🧠 I'm learning Machine Learning</li>
+      <li>⚡ Coffee flows through my veins, fueling my coding adventures and transforming caffeine into lines of logic and creativity. ☕💻</li>
+      <li>🤩 I have a passion for 🎵 music, 🎮 gaming.</li>
+    </ul>
+    <h3 class="skills">Skills</h3>
+    <p class="skills">
+      ❅ Kotlin<br>
+      ❅ Java<br>
+      ❅ Android Studio<br>
+      ❅ MVVM Architecture<br>
+      ❅ Retrofit<br>
+      ❅ Dagger Hilt<br>
+      ❅ RxJava<br>
+      ❅ LiveData<br>
+      ❅ Room Database<br>
+      ❅ Firebase<br>
+      ❅ Google Maps API<br>
+      ❅ Material Design<br>
+      ❅ Unit Testing, UI Testing, Performance Testing (Robolectric, Espresso, Mockito, Firebase Test Lab)<br>
+      ❅ Data Structures and Algorithms<br>
+      ❅ OOP Patterns<br>
+      ❅ Spring Framework<br>
+      ❅ JavaFX<br>
+      ❅ Angular<br>
+      ❅ HTML<br>
+      ❅ CSS<br>
+      ❅ JavaScript<br>
+      ❅ TypeScript<br>
+      ❅ React Native<br>
+      ❅ Git (Bitbucket, GitHub, GitLab)<br>
+      ❅ Agile Methodology<br>
+    </p>
+    <h3 class="socials">Socials</h3>
+    <p class="socials">
+      <a href="https://www.github.com/MohammedAlsudani"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/github.svg" width="32" height="32" /></a>
+      <a href="https://www.linkedin.com/in/mohammed-alsudani-259a28152"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/linkedin.svg" width="32" height="32" /></a>
+    </p>
+    <h3 style="font-size: 20px;">Badges</h3>
+    <p>
+      <b>My GitHub Stats</b>
+      <br>
+      <a href="http://www.github.com/MohammedAlsudani"><img src="https://github-readme-stats.vercel.app/api?username=MohammedAlsudani&show_icons=true&hide=&count_private=true&title_color=0891b2&text_color=ffffff&icon_color=0891b2&bg_color=1c1917&hide_border=true&show_icons=true" alt="MohammedAlsudani's GitHub stats" /></a>
+      <br>
+      <a href="http://www.github.com/MohammedAlsudani"><img src="https://github-readme-streak-stats.herokuapp.com/?user=MohammedAlsudani&stroke=ffffff&background=1c1917&ring=0891b2&fire=0891b2&currStreakNum=ffffff&currStreakLabel=0891b2&sideNums=ffffff&sideLabels=ffffff&dates=ffffff&hide_border=true" /></a>
+      <br>
+      <a href="http://www.github.com/MohammedAlsudani"><img src="https://github-readme-activity-graph.cyclic.app/graph?username=MohammedAlsudani&bg_color=1c1917&color=ffffff&line=0891b2&point=ffffff&area_color=1c1917&area=true&hide_border=true&custom_title=GitHub%20Commits%20Graph" alt="GitHub Commits Graph" /></a>
+    </p>
   </div>
 </body>
 </html>
