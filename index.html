@@ -15,20 +15,22 @@
       max-width: 800px;
       margin: 0 auto;
       padding: 20px;
+      display: flex;
+      align-items: flex-start;
     }
 
-    @keyframes fadeIn {
-      0% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
+    .profile-image {
+      display: block;
+      margin-right: 20px;
+      border-radius: 50%;
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border: 5px solid #0891b2;
     }
 
-    .fadeIn {
-      animation-name: fadeIn;
-      animation-duration: 2s;
+    .content {
+      flex-grow: 1;
     }
 
     h1, h2, h3 {
@@ -57,77 +59,70 @@
     a:hover {
       text-decoration: underline;
     }
-
-    .profile-image {
-      display: block;
-      margin: 20px auto;
-      border-radius: 50%;
-      width: 200px;
-      height: 200px;
-      object-fit: cover;
-      border: 5px solid #0891b2;
-    }
   </style>
 </head>
 <body>
   <div class="container fadeIn">
-<div style="text-align: center; margin-bottom: 40px;">
-  <img class="profile-image" src="https://avatars.githubusercontent.com/u/43975379?s=400&u=9855e733a152bcc48d1b726985ed8a2ad194bf47&v=4" alt="Profile Image" style="border-radius: 50%; width: 200px; height: 200px; object-fit: cover; border: 5px solid #0891b2;">
-  <h1 style="font-size: 36px; color: #FFFFFF; margin-top: 20px;">Hi, I'm Mohammed Alsudani</h1>
-  <h2 style="font-size: 24px; color: #FFFFFF;">Senior Android Developer</h2>
-</div>
-    <ul>
-      <li style="color: #FFFFFF;">🌍 I'm based in Moldova, Chișinău</li>
-      <li style="color: #FFFFFF;">🖥️ See my portfolio at <a href="http://materialuiux.com/">MaterialUiUx</a></li>
-      <li style="color: #FFFFFF;">✉️ You can contact me at <a href="mailto:alsudanimohammed1@gmail.com">alsudanimohammed1@gmail.com</a></li>
-      <li style="color: #FFFFFF;">👨‍💻 #SelfTaught Developer</li>
-      <li style="color: #FFFFFF;">🧠 I'm learning Machine Learning</li>
-      <li style="color: #FFFFFF;">⚡ Coffee flows through my veins, fueling my coding adventures and transforming caffeine into lines of logic and creativity. ☕💻</li>
-      <li style="color: #FFFFFF;">🤩 I have a passion for 🎵 music, 🎮 gaming.</li>
-    </ul>
-    <h3 style="font-size: 20px; color: #FFFFFF;">Skills</h3>
-    <p style="color: #FFFFFF;">
-      ❅ Kotlin<br>
-      ❅ Java<br>
-      ❅ Android Studio<br>
-      ❅ MVVM Architecture<br>
-      ❅ Retrofit<br>
-      ❅ Dagger Hilt<br>
-      ❅ RxJava<br>
-      ❅ LiveData<br>
-      ❅ Room Database<br>
-      ❅ Firebase<br>
-      ❅ Google Maps API<br>
-      ❅ Material Design<br>
-      ❅ Unit Testing, UI Testing, Performance Testing (Robolectric, Espresso, Mockito, Firebase Test Lab)<br>
-      ❅ Data Structures and Algorithms<br>
-      ❅ OOP Patterns<br>
-      ❅ Spring Framework<br>
-      ❅ JavaFX<br>
-      ❅ Angular<br>
-      ❅ HTML<br>
-      ❅ CSS<br>
-      ❅ JavaScript<br>
-      ❅ TypeScript<br>
-      ❅ React Native<br>
-      ❅ Git (Bitbucket, GitHub, GitLab)<br>
-      ❅ Agile Methodology<br>
-    </p>
-    <h3 style="font-size: 20px; color: #FFFFFF;">Socials</h3>
-    <p>
-      <a href="https://www.github.com/MohammedAlsudani"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/github.svg" width="32" height="32" /></a>
-      <a href="https://www.linkedin.com/in/mohammed-alsudani-259a28152"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/linkedin.svg" width="32" height="32" /></a>
-    </p>
-    <h3 style="font-size: 20px; color: #FFFFFF;">Badges</h3>
-    <p>
-      <b style="color: #FFFFFF;">My GitHub Stats</b>
-      <br>
-      <a href="http://www.github.com/MohammedAlsudani"><img src="https://github-readme-stats.vercel.app/api?username=MohammedAlsudani&show_icons=true&hide=&count_private=true&title_color=0891b2&text_color=FFFFFF&icon_color=0891b2&bg_color=1c1917&hide_border=true&show_icons=true" alt="MohammedAlsudani's GitHub stats" /></a>
-      <br>
-      <a href="http://www.github.com/MohammedAlsudani"><img src="https://github-readme-streak-stats.herokuapp.com/?user=MohammedAlsudani&stroke=FFFFFF&background=1c1917&ring=0891b2&fire=0891b2&currStreakNum=FFFFFF&currStreakLabel=0891b2&sideNums=FFFFFF&sideLabels=FFFFFF&dates=FFFFFF&hide_border=true" /></a>
-      <br>
-      <a href="http://www.github.com/MohammedAlsudani"><img src="https://github-readme-activity-graph.cyclic.app/graph?username=MohammedAlsudani&bg_color=1c1917&color=FFFFFF&line=0891b2&point=FFFFFF&area_color=1c1917&area=true&hide_border=true&custom_title=GitHub%20Commits%20Graph" alt="GitHub Commits Graph" /></a>
-    </p>
+    <img class="profile-image" src="https://avatars.githubusercontent.com/u/43975379?s=400&u=9855e733a152bcc48d1b726985ed8a2ad194bf47&v=4" alt="Hi GIF" />
+    <div class="content">
+      <h1 style="font-size: 36px;">Hi, My name is Mohammed Alsudani</h1>
+      <h2 style="font-size: 24px;">Senior Android Developer</h2>
+      <p>
+        Highly skilled in native app development with 7+ years of experience designing, building, and customizing android apps for various domains such as Hotel Management, Freight forwarding & shipping software solutions, Payment System, Doctor Booking, Health, and Fitness, Food Industry, Social Media Apps, Dating App, Productivity Apps, Service Providers, etc.
+      </p>
+      <ul>
+        <li>🌍 I'm based in Moldova, Chișinău</li>
+        <li>🖥️ See my portfolio at <a href="http://materialuiux.com/">MaterialUiUx</a></li>
+        <li>✉️ You can contact me at <a href="mailto:alsudanimohammed1@gmail.com">alsudanimohammed1@gmail.com</a></li>
+        <li>👨‍💻 #SelfTaught Developer</li>
+        <li>🧠 I'm learning Machine Learning</li>
+        <li>⚡ Coffee flows through my veins, fueling my coding adventures and transforming caffeine into lines of logic and creativity. ☕💻</li>
+        <li>🤩 I have a passion for 🎵 music, 🎮 gaming.</li>
+      </ul>
+      <h3>Skills</h3>
+      <p>
+        ❅ Kotlin<br>
+        ❅ Java<br>
+        ❅ Android Studio<br>
+        ❅ MVVM Architecture<br>
+        ❅ Retrofit<br>
+        ❅ Dagger Hilt<br>
+        ❅ RxJava<br>
+        ❅ LiveData<br>
+        ❅ Room Database<br>
+        ❅ Firebase<br>
+        ❅ Google Maps API<br>
+        ❅ Material Design<br>
+        ❅ Unit Testing, UI Testing, Performance Testing (Robolectric, Espresso, Mockito, Firebase Test Lab)<br>
+        ❅ Data Structures and Algorithms<br>
+        ❅ OOP Patterns<br>
+        ❅ Spring Framework<br>
+        ❅ JavaFX<br>
+        ❅ Angular<br>
+        ❅ HTML<br>
+        ❅ CSS<br>
+        ❅ JavaScript<br>
+        ❅ TypeScript<br>
+        ❅ React Native<br>
+        ❅ Git (Bitbucket, GitHub, GitLab)<br>
+        ❅ Agile Methodology<br>
+      </p>
+      <h3>Socials</h3>
+      <p>
+        <a href="https://www.github.com/MohammedAlsudani"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/github.svg" width="32" height="32" /></a>
+        <a href="https://www.linkedin.com/in/mohammed-alsudani-259a28152"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/linkedin.svg" width="32" height="32" /></a>
+      </p>
+      <h3>Badges</h3>
+      <p>
+        <b>My GitHub Stats</b>
+        <br>
+        <a href="http://www.github.com/MohammedAlsudani"><img src="https://github-readme-stats.vercel.app/api?username=MohammedAlsudani&show_icons=true&hide=&count_private=true&title_color=0891b2&text_color=ffffff&icon_color=0891b2&bg_color=1c1917&hide_border=true&show_icons=true" alt="MohammedAlsudani's GitHub stats" /></a>
+        <br>
+        <a href="http://www.github.com/MohammedAlsudani"><img src="https://github-readme-streak-stats.herokuapp.com/?user=MohammedAlsudani&stroke=ffffff&background=1c1917&ring=0891b2&fire=0891b2&currStreakNum=ffffff&currStreakLabel=0891b2&sideNums=ffffff&sideLabels=ffffff&dates=ffffff&hide_border=true" /></a>
+        <br>
+        <a href="http://www.github.com/MohammedAlsudani"><img src="https://github-readme-activity-graph.cyclic.app/graph?username=MohammedAlsudani&bg_color=1c1917&color=ffffff&line=0891b2&point=ffffff&area_color=1c1917&area=true&hide_border=true&custom_title=GitHub%20Commits%20Graph" alt="GitHub Commits Graph" /></a>
+      </p>
+    </div>
   </div>
 </body>
 </html>
