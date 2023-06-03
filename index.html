@@ -1,14 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mohammed Alsudani - Senior Android Developer</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f1f1f1;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f4f4f4;
       margin: 0;
       padding: 0;
     }
@@ -17,155 +15,129 @@
       max-width: 800px;
       margin: 0 auto;
       padding: 20px;
-      background-color: #fff;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
     }
 
-    .profile-image {
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .header h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .header h2 {
+      font-size: 20px;
+      color: #777;
+    }
+
+    .profile-img {
       display: block;
       margin: 0 auto;
       width: 200px;
       height: 200px;
       border-radius: 50%;
-      object-fit: cover;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-    h1 {
-      text-align: center;
-      margin-top: 20px;
-      font-size: 32px;
-      color: #333;
-    }
-
-    h2 {
-      margin-top: 20px;
-      font-size: 24px;
-      color: #555;
-    }
-
-    p {
-      margin-top: 10px;
-      line-height: 1.5;
-      color: #777;
-    }
-
-    ul {
-      margin-top: 10px;
-      padding-left: 20px;
-      line-height: 1.5;
-      color: #777;
-    }
-
-    ul li {
-      list-style-type: disc;
+      border: 4px solid #fff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
     }
 
     .skills {
-      margin-top: 20px;
+      margin-top: 40px;
+    }
+
+    .skills h3 {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 20px;
     }
 
     .skills ul {
-      columns: 2;
-      -webkit-columns: 2;
-      -moz-columns: 2;
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
     }
 
-    .skills ul li {
-      list-style-type: none;
+    .skills li {
+      font-size: 16px;
+      margin-bottom: 10px;
+      color: #555;
     }
 
     .socials {
-      margin-top: 20px;
+      margin-top: 40px;
       text-align: center;
     }
 
     .socials a {
       display: inline-block;
-      margin: 0 10px;
-      width: 32px;
-      height: 32px;
-      line-height: 32px;
-      text-align: center;
-      border-radius: 50%;
-      background-color: #555;
-      color: #fff;
-      transition: background-color 0.3s ease;
-    }
-
-    .socials a:hover {
-      background-color: #333;
+      margin-right: 10px;
+      color: #777;
     }
 
     .badges {
-      margin-top: 20px;
+      margin-top: 40px;
       text-align: center;
     }
 
     .badges img {
-      width: 100%;
-      max-width: 120px;
-      height: auto;
-      margin: 10px;
+      margin-right: 10px;
     }
   </style>
 </head>
-
 <body>
   <div class="container">
-    <img src="https://avatars.githubusercontent.com/u/43975379?s=400&u=9855e733a152bcc48d1b726985ed8a2ad194bf47&v=4" alt="Profile Picture" class="profile-image">
-    <h1>Mohammed Alsudani</h1>
-    <h2>Senior Android Developer</h2>
-    <p>Highly skilled in native app development with 7+ years of experience designing, building, and customizing Android apps for various domains.</p>
+    <div class="header">
+      <h1>Mohammed Alsudani</h1>
+      <h2>Senior Android Developer</h2>
+      <img src="https://avatars.githubusercontent.com/u/43975379?s=400&u=9855e733a152bcc48d1b726985ed8a2ad194bf47&v=4" alt="Profile Picture" class="profile-img">
+    </div>
 
-    <h2>Skills</h2>
     <div class="skills">
+      <h3>Skills</h3>
       <ul>
-        <li>Java</li>
         <li>Kotlin</li>
-        <li>Android Jetpack</li>
-        <li>Android app modularization</li>
-        <li>Android security</li>
-        <li>Android Architecture patterns (MVC, MVP, MVVM)</li>
-        <li>WebRTC</li>
-        <li>Dagger/Hilt</li>
-        <li>Rx (Java, Kotlin)</li>
-        <li>Kotlin Coroutines</li>
-        <li>Local Database management with SQLite, Realm, ORMLITE, Room</li>
-        <li>Working with APIs (Retrofit, Volley, okhttp3)</li>
-        <li>Working with real-time APIs (WebSockets, XMPP, IoT MQTT)</li>
-        <li>Firebase Integration</li>
-        <li>Maps (Google, MapBox, Openstreetmap)</li>
-        <li>Social media integration with Facebook, Twitter, and Instagram</li>
-        <li>PDF Rendering</li>
-        <li>3D Model Rendering</li>
-        <li>Device hardware such as Bluetooth, GPS, Accelerometer, Camera, etc.</li>
-        <li>Testing (Unit testing, Espresso testing, Firebase test lab)</li>
+        <li>Java</li>
+        <li>Android Studio</li>
+        <li>MVVM Architecture</li>
+        <li>Retrofit</li>
+        <li>Dagger Hilt</li>
+        <li>RxJava</li>
+        <li>LiveData</li>
+        <li>Room Database</li>
+        <li>Firebase</li>
+        <li>Google Maps API</li>
+        <li>Material Design</li>
+        <li>Unit Testing, UI Testing, Performance Testing (Robolectric, Espresso, Mockito, Firebase Test Lab)</li>
+        <li>Data Structures and Algorithms</li>
+        <li>OOP</li>
+        <li>Git</li>
+        <li>Agile Methodology</li>
       </ul>
     </div>
 
-    <h2>Socials</h2>
     <div class="socials">
-      <a href="https://www.github.com/MohammedAlsudani" target="_blank"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/github.svg" alt="GitHub"></a>
-      <a href="https://www.linkedin.com/in/mohammed-alsudani-259a28152" target="_blank"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/linkedin.svg" alt="LinkedIn"></a>
+      <a href="https://www.github.com/MohammedAlsudani" target="_blank"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/github.svg" width="32" height="32" alt="GitHub"></a>
+      <a href="https://www.linkedin.com/in/mohammed-alsudani-259a28152" target="_blank"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/linkedin.svg" width="32" height="32" alt="LinkedIn"></a>
     </div>
 
-    <h2>Badges</h2>
     <div class="badges">
-      <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/java-colored.svg" alt="Java">
-      <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/kotlin-colored.svg" alt="Kotlin">
-      <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/swift-colored.svg" alt="Swift">
-      <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/javascript-colored.svg" alt="JavaScript">
-      <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/typescript-colored.svg" alt="TypeScript">
-      <img src="https://user-images.githubusercontent.com/51391473/113920973-14da8880-97ab-11eb-8223-ffa85d487831.png" alt="Spring">
-      <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/react-colored.svg" alt="React">
-      <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/angularjs-colored.svg" alt="Angular">
-      <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/firebase-colored.svg" alt="Firebase">
-      <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/mysql-colored.svg" alt="MySQL">
-      <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/mongodb-colored.svg" alt="MongoDB">
+      <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/java-colored.svg" width="36" height="36" alt="Java">
+      <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/kotlin-colored.svg" width="36" height="36" alt="Kotlin">
+      <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/swift-colored.svg" width="36" height="36" alt="Swift">
+      <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/javascript-colored.svg" width="36" height="36" alt="JavaScript">
+      <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/typescript-colored.svg" width="36" height="36" alt="TypeScript">
+      <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/spring-colored.svg" width="36" height="36" alt="Spring">
+      <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/react-colored.svg" width="36" height="36" alt="React">
+      <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/angularjs-colored.svg" width="36" height="36" alt="Angular">
+      <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/firebase-colored.svg" width="36" height="36" alt="Firebase">
+      <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/mysql-colored.svg" width="36" height="36" alt="MySQL">
+      <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/photoshop-colored.svg" width="36" height="36" alt="Photoshop">
+      <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/figma-colored.svg" width="36" height="36" alt="Figma">
+      <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/git-colored.svg" width="36" height="36" alt="Git">
     </div>
   </div>
 </body>
-
 </html>
