@@ -191,6 +191,7 @@
         /* Previous Button Styles */
         .slider-controls .prev-button {
             background-color: transparent; /* Previous button background color */
+            color: #0891b2; /* Update the color of the next button */
         }
 
         .slider-controls .prev-button::before {
@@ -200,6 +201,7 @@
         /* Next Button Styles */
         .slider-controls .next-button {
             background-color: transparent; /* Next button background color */
+            color: #0891b2; /* Update the color of the next button */
         }
 
         .slider-controls .next-button::before {
@@ -289,13 +291,13 @@
             <li><img src="https://raw.githubusercontent.com/MohammedAlsudani/MohammedAlsudani.github.io/master/reviews/review%20(9).png"></li>
             <li><img src="https://raw.githubusercontent.com/MohammedAlsudani/MohammedAlsudani.github.io/master/reviews/review%20(10).png"></li>
         </ul>
+           <div class="slider-controls">
+           <button class="prev-button" onclick="prevImage()"></button>
+           <button class="next-button" onclick="nextImage()"></button>
+           </div>
+ 
     </div>
 
-  <div class="slider-controls">
-        <button class="prev-button" onclick="prevImage()"></button>
-        <button class="next-button" onclick="nextImage()"></button>
-    </div>
-    
     <script>
         var imageList = document.querySelector('.image-list');
         var imageItems = document.querySelectorAll('.image-list li');
