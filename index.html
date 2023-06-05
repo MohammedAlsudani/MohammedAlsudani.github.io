@@ -121,24 +121,6 @@
          .skills-list li:nth-child(odd) {
          background-color: #0b7290;
          }
-         .slider {
-         width: 100%;
-         overflow: hidden;
-         position: relative;
-         }
-         .image-list {
-         list-style-type: none;
-         padding: 0;
-         display: flex;
-         transition: transform 0.5s;
-         }
-         .image-list li {
-         margin: 10px;
-         opacity: 0;
-         animation: fade-in 1s forwards;
-         justify-content: center; /* Center horizontally */
-         align-items: center; /* Center vertically */
-         }
          @keyframes fade-in {
          0% {
          opacity: 0;
@@ -148,38 +130,6 @@
          opacity: 1;
          transform: translateY(0);
          }
-         }
-         .slider-controls {
-         display: flex;
-         justify-content: center;
-         margin-top: 10px;
-         }
-         .slider-controls button {
-         background: none;
-         border: none;
-         margin: 0 5px;
-         cursor: pointer;
-         font-size: 20px;
-         outline: none;
-         }
-         .slider-controls button:hover {
-         color: #ccc; /* Button text color on hover */
-         }
-         /* Previous Button Styles */
-         .slider-controls .prev-button {
-         background-color: transparent; /* Previous button background color */
-         color: #0891b2; /* Update the color of the next button */
-         }
-         .slider-controls .prev-button::before {
-         content: "\2039"; /* Unicode for left arrow symbol */
-         }
-         /* Next Button Styles */
-         .slider-controls .next-button {
-         background-color: transparent; /* Next button background color */
-         color: #0891b2; /* Update the color of the next button */
-         }
-         .slider-controls .next-button::before {
-         content: "\203A"; /* Unicode for right arrow symbol */
          }
       </style>
    </head>
@@ -252,7 +202,7 @@
             <a href="https://www.linkedin.com/in/mohammed-alsudani-259a28152"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/linkedin.svg" width="32" height="32" /></a>
          </p>
          <h3 style="font-size: 20px; color: #FFFFFF;">Past work reviews</h3>
-         <div class="slider">
+         <div>
             <ul class="image-list">
                <li><img src="https://raw.githubusercontent.com/MohammedAlsudani/MohammedAlsudani.github.io/master/reviews/review%20(1).png"></li>
                <li><img src="https://raw.githubusercontent.com/MohammedAlsudani/MohammedAlsudani.github.io/master/reviews/review%20(2).png"></li>
@@ -265,49 +215,7 @@
                <li><img src="https://raw.githubusercontent.com/MohammedAlsudani/MohammedAlsudani.github.io/master/reviews/review%20(9).png"></li>
                <li><img src="https://raw.githubusercontent.com/MohammedAlsudani/MohammedAlsudani.github.io/master/reviews/review%20(10).png"></li>
             </ul>
-            <div class="slider-controls">
-               <button class="prev-button" onclick="prevImage()"></button>
-               <button class="next-button" onclick="nextImage()"></button>
-            </div>
          </div>
-         <script>
-            var imageList = document.querySelector('.image-list');
-            var imageItems = document.querySelectorAll('.image-list li');
-            var currentIndex = 0;
-            var slideWidth = imageItems[0].clientWidth;
-            var interval;
-            
-            function showImage(index) {
-                if (index < 0) {
-                    index = imageItems.length - 1;
-                } else if (index >= imageItems.length) {
-                    index = 0;
-                }
-            
-                imageList.style.transform = `translateX(-${slideWidth * index}px)`;
-                currentIndex = index;
-            }
-            
-            function prevImage() {
-                showImage(currentIndex - 1);
-                clearInterval(interval);
-                startAutoSlide();
-            }
-            
-            function nextImage() {
-                showImage(currentIndex + 1);
-                clearInterval(interval);
-                startAutoSlide();
-            }
-            
-            function startAutoSlide() {
-                interval = setInterval(function() {
-                    showImage(currentIndex + 1);
-                }, 3000);
-            }
-            
-            startAutoSlide();
-         </script>
       </div>
    </body>
 </html>
