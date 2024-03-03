@@ -1,318 +1,385 @@
 <!DOCTYPE html>
 <html>
-   <head>
-      <title>Mohammed Alsudani - Senior Android Developer</title>
-      <style>
-         body {
-         background-color: #121212;
-         font-family: 'Arial', sans-serif;
-         color: #FFFFFF;
-         margin: 0;
-         padding: 0;
-         }
-         .container {
-         max-width: 800px;
-         margin: 0 auto;
-         padding: 20px;
-         }
-         @keyframes fadeIn {
-         0% {
-         opacity: 0;
-         }
-         100% {
-         opacity: 1;
-         }
-         }
-         .fadeIn {
-         animation-name: fadeIn;
-         animation-duration: 2s;
-         }
-         h1, h2, h3 {
-         font-family: 'Verdana', sans-serif;
-         color: #0891b2;
-         }
-         p {
-         line-height: 1.5;
-         }
-         ul {
-         list-style-type: disc;
-         padding-left: 20px;
-         }
-         ul li {
-         margin-bottom: 10px;
-         }
-         a {
-         color: #0891b2;
-         text-decoration: none;
-         }
-         a:hover {
-         text-decoration: underline;
-         }
-         .profile-image {
-         display: block;
-         margin: 20px auto;
-         border-radius: 50%;
-         width: 200px;
-         height: 200px;
-         object-fit: cover;
-         border: 5px solid #0891b2;
-         }
-         @keyframes slideInFromLeft {
-         0% {
-         transform: translateX(-100%);
-         opacity: 0;
-         }
-         100% {
-         transform: translateX(0);
-         opacity: 1;
-         }
-         }
-         .slideInFromLeft {
-         animation-name: slideInFromLeft;
-         animation-duration: 1s;
-         }
-         @keyframes fadeInScale {
-         0% {
-         transform: scale(0);
-         opacity: 0;
-         }
-         100% {
-         transform: scale(1);
-         opacity: 1;
-         }
-         }
-         .fadeInScale {
-         animation-name: fadeInScale;
-         animation-duration: 1s;
-         }
-         @keyframes bounce {
-         0%, 100% {
-         transform: translateY(0);
-         }
-         50% {
-         transform: translateY(-10px);
-         }
-         }
-         .bounce {
-         animation-name: bounce;
-         animation-duration: 0.5s;
-         animation-iteration-count: infinite;
-         }
-         .skills-list {
-         display: flex;
-         flex-wrap: wrap;
-         justify-content: center;
-         list-style: none;
-         padding: 0;
-         margin-top: 20px;
-         }
-         .skills-list li {
-         margin: 10px;
-         padding: 8px 12px;
-         background-color: #0891b2;
-         border-radius: 20px;
-         font-size: 14px;
-         color: #FFFFFF;
-         animation: fadeInScale 1s ease-in-out;
-         animation-fill-mode: both;
-         opacity: 0;
-         transform: scale(0);
-         }
-         .skills-list li:nth-child(odd) {
-         background-color: #0b7290;
-         }
-         @keyframes fade-in {
-         0% {
-         opacity: 0;
-         transform: translateY(50px);
-         }
-         100% {
-         opacity: 1;
-         transform: translateY(0);
-         }
-         }
-             .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 10px;
-            padding: 20px;
+  <head>
+    <title>Mohammed Alsudani - Senior Android Developer</title>
+    <style>
+      body {
+        background-color: #121212;
+        font-family: 'Arial', sans-serif;
+        color: #FFFFFF;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
         }
 
-        .grid-item {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative;
+        100% {
+          opacity: 1;
+        }
+      }
+
+      .fadeIn {
+        animation-name: fadeIn;
+        animation-duration: 2s;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: 'Verdana', sans-serif;
+        color: #0891b2;
+      }
+
+      p {
+        line-height: 1.5;
+      }
+
+      ul {
+        list-style-type: disc;
+        padding-left: 20px;
+      }
+
+      ul li {
+        margin-bottom: 10px;
+      }
+
+      a {
+        color: #0891b2;
+        text-decoration: none;
+      }
+
+      a:hover {
+        text-decoration: underline;
+      }
+
+      .profile-image {
+        display: block;
+        margin: 20px auto;
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border: 5px solid #0891b2;
+      }
+
+      @keyframes slideInFromLeft {
+        0% {
+          transform: translateX(-100%);
+          opacity: 0;
         }
 
-        .grid-item img {
-            max-width: 100%;
-            height: auto;
-            cursor: pointer;
+        100% {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      .slideInFromLeft {
+        animation-name: slideInFromLeft;
+        animation-duration: 1s;
+      }
+
+      @keyframes fadeInScale {
+        0% {
+          transform: scale(0);
+          opacity: 0;
         }
 
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.7);
-            display: none;
-            justify-content: center;
-            align-items: center;
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      .fadeInScale {
+        animation-name: fadeInScale;
+        animation-duration: 1s;
+      }
+
+      @keyframes bounce {
+
+        0%,
+        100% {
+          transform: translateY(0);
         }
 
-        .overlay img {
-            max-width: 80%;
-            max-height: 80%;
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      .bounce {
+        animation-name: bounce;
+        animation-duration: 0.5s;
+        animation-iteration-count: infinite;
+      }
+
+      .skills-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        list-style: none;
+        padding: 0;
+        margin-top: 20px;
+      }
+
+      .skills-list li {
+        margin: 10px;
+        padding: 8px 12px;
+        background-color: #0891b2;
+        border-radius: 20px;
+        font-size: 14px;
+        color: #FFFFFF;
+        animation: fadeInScale 1s ease-in-out;
+        animation-fill-mode: both;
+        opacity: 0;
+        transform: scale(0);
+      }
+
+      .skills-list li:nth-child(odd) {
+        background-color: #0b7290;
+      }
+
+      @keyframes fade-in {
+        0% {
+          opacity: 0;
+          transform: translateY(50px);
         }
 
-        .close-btn {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            cursor: pointer;
-            color: white;
-            font-size: 24px;
+        100% {
+          opacity: 1;
+          transform: translateY(0);
         }
-      </style>
-   </head>
-   <body>
-      <div class="container fadeIn">
-         <h1 style="text-align: center;"> <img class="profile-image" src="https://avatars.githubusercontent.com/u/43975379?s=400&u=9855e733a152bcc48d1b726985ed8a2ad194bf47&v=4" alt="Hi GIF" /></h1>
-         <h1 class="fadeInScale animated" style="text-align: center; font-size: 36px; color: #FFFFFF;">Hi, My name is Mohammed Alsudani</h1>
-         <h2 class="fadeInScale animated" style="text-align: center;" >Senior Android Developer</h2>
-         <p style="text-align: center; color: #FFFFFF;">
-            Highly skilled in native app development with 7+ years of experience designing, building, and customizing android apps for various domains such as Hotel Management, Freight forwarding & shipping software solutions, Payment System, Doctor Booking, Health, and Fitness, Food Industry, Social Media Apps, Dating App, Productivity Apps, Service Providers, etc.
-         </p>
-    
-         <ul>
-            <li class="fadeIn animated" style="color: #FFFFFF;">🌍 I'm based in Moldova, Chișinău</li>
-            <li class="fadeIn animated" style="color: #FFFFFF;">🖥️ See my portfolio at <a href="http://materialuiux.com/">MaterialUiUx</a></li>
-            <li class="fadeIn animated" style="color: #FFFFFF;">✉️ You can contact me at <a href="mailto:alsudanimohammed1@gmail.com">alsudanimohammed1@gmail.com</a></li>
-            <li class="fadeIn animated" style="color: #FFFFFF;">👨‍💻 #SelfTaught Developer</li>
-            <li class="fadeIn animated" style="color: #FFFFFF;">🧠 I'm learning Machine Learning</li>
-            <li class="fadeIn animated" style="color: #FFFFFF;">⚡ Coffee flows through my veins, fueling my coding adventures and transforming caffeine into lines of logic and creativity. ☕💻</li>
-            <li class="fadeIn animated" style="color: #FFFFFF;">🤩 I have a passion for 🎵 music, 🎮 gaming.</li>
-         </ul>
-         <h3 style="font-size: 20px; color: #FFFFFF;">My Android skills include expertise in:</h3>
-         <p style="color: #FFFFFF;" class="fadeIn animated">
-            ❅ Kotlin<br>
-            ❅ Java<br>
-            ❅ Kotlin<br>
-            ❅ Android Jetpack<br>
-            ❅ Android app modularization<br>
-            ❅ Android security<br>
-            ❅ Android Architecture patterns such as MVC, MVP, MVVM<br>
-            ❅ WebRTC<br>
-            ❅ Dagger/Hilt<br>
-            ❅ Rx (Java, Kotlin)<br>
-            ❅ Kotlin Coroutines<br>
-            ❅ Local Database management with SQLite, Realm, ORMLITE, Room<br>
-            ❅ working with APIs (Retrofit, Volley, okhttp3)<br>
-            ❅ working with real-time APIs (WebSockets, XMPP, IoT MQTT)<br>
-            ❅ Firebase Integration<br>
-            ❅ Maps (Google, MapBox, Openstreetmap)<br>
-            ❅ social media integration with Facebook, Twitter, and Instagram<br>
-            ❅ PDF Rendering<br>
-            ❅ 3D Model Rendering<br>
-            ❅ device hardware such as Bluetooth, GPS, Accelerometer, Camera, etc.<br>
-            ❅ testing (Unit testing, Espresso testing, Firebase test lab)<br>
-         </p>
-         <h3 style="font-size: 20px; color: #FFFFFF;">In addition to my Android skills, I also have expertise in:</h3>
-         <p style="color: #FFFFFF;" class="fadeIn animated">
-            ❅ Data Structures and Algorithms<br>
-            ❅ OOP patterns<br>
-            ❅ JavaFx<br>
-            ❅ Spring framework<br>
-            ❅ iOS development<br>
-            ❅ Swift<br>
-            ❅ Javascript<br>
-            ❅ TypeScript<br>
-            ❅ React Native<br>
-            ❅ Angular<br>
-            ❅ HTML<br>
-            ❅ CSS<br>
-            ❅ Git (Bitbucket, GitHub, Gitlab)<br>
-            ❅ Agile methodology<br>
-         </p>
-         <p align="left">
-            <a href="https://www.oracle.com/java/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/java-colored.svg" width="36" height="36" alt="Java" /></a>
-            <a href="https://kotlinlang.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/kotlin-colored.svg" width="36" height="36" alt="Kotlin" /></a>
-            <a href="https://developer.apple.com/swift/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/swift-colored.svg" width="36" height="36" alt="Swift" /></a>
-            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/javascript-colored.svg" width="36" height="36" alt="JavaScript" /></a>
-            <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/typescript-colored.svg" width="36" height="36" alt="TypeScript" /></a>
-            <a href="https://spring.io/" target="_blank" rel="noreferrer"><img src="https://user-images.githubusercontent.com/51391473/113920973-14da8880-97ab-11eb-8223-ffa85d487831.png" width="36" height="36" alt="Spring" /></a>
-            <a href="https://reactjs.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/react-colored.svg" width="36" height="36" alt="React" /></a>
-            <a href="https://angular.io/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/angularjs-colored.svg" width="36" height="36" alt="Angular" /></a>
-            <a href="https://firebase.google.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/firebase-colored.svg" width="36" height="36" alt="Firebase" /></a>
-            <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/mysql-colored.svg" width="36" height="36" alt="MySQL" /></a>
-            <a href="https://www.adobe.com/uk/products/photoshop.html" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/photoshop-colored.svg" width="36" height="36" alt="Photoshop" /></a>
-            <a href="https://www.figma.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/figma-colored.svg" width="36" height="36" alt="Figma" /></a>
-            <a href="https://git-scm.com/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/git-colored.svg" width="36" height="36" alt="Git" /></a>
-         </p>
-         <h3 style="font-size: 20px; color: #FFFFFF;">Socials</h3>
-         <p>
-            <a href="https://www.github.com/MohammedAlsudani"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/github.svg" width="32" height="32" /></a>
-            <a href="https://www.linkedin.com/in/mohammed-alsudani-259a28152"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/linkedin.svg" width="32" height="32" /></a>
-         </p>
-         <h3 style="font-size: 20px; color: #FFFFFF;">Past work reviews</h3>
-         <div>
-            <ul class="image-list">
-               <li><img src="https://raw.githubusercontent.com/MohammedAlsudani/MohammedAlsudani.github.io/master/reviews/review%20(1).png"></li>
-               <li><img src="https://raw.githubusercontent.com/MohammedAlsudani/MohammedAlsudani.github.io/master/reviews/review%20(2).png"></li>
-               <li><img src="https://raw.githubusercontent.com/MohammedAlsudani/MohammedAlsudani.github.io/master/reviews/review%20(3).png"></li>
-               <li><img src="https://raw.githubusercontent.com/MohammedAlsudani/MohammedAlsudani.github.io/master/reviews/review%20(4).png"></li>
-               <li><img src="https://raw.githubusercontent.com/MohammedAlsudani/MohammedAlsudani.github.io/master/reviews/review%20(5).png"></li>
-               <li><img src="https://raw.githubusercontent.com/MohammedAlsudani/MohammedAlsudani.github.io/master/reviews/review%20(6).png"></li>
-               <li><img src="https://raw.githubusercontent.com/MohammedAlsudani/MohammedAlsudani.github.io/master/reviews/review%20(7).png"></li>
-               <li><img src="https://raw.githubusercontent.com/MohammedAlsudani/MohammedAlsudani.github.io/master/reviews/review%20(8).png"></li>
-               <li><img src="https://raw.githubusercontent.com/MohammedAlsudani/MohammedAlsudani.github.io/master/reviews/review%20(9).png"></li>
-               <li><img src="https://raw.githubusercontent.com/MohammedAlsudani/MohammedAlsudani.github.io/master/reviews/review%20(10).png"></li>
-            </ul>
-         </div>
-         <h3 style="font-size: 20px; color: #FFFFFF;">Certifications</h3>
-         <div>
-            <ul class="image-list">
-               <li><img src="https://raw.githubusercontent.com/MohammedAlsudani/MohammedAlsudani.github.io/master/certifications/cert0.jpg" style="width: 500px;"></li>
-               <li><img src="https://raw.githubusercontent.com/MohammedAlsudani/MohammedAlsudani.github.io/master/certifications/cert1.jpg" style="width: 500px;"></li>
-               <li><img src="https://raw.githubusercontent.com/MohammedAlsudani/MohammedAlsudani.github.io/master/certifications/cert2.jpg" style="width: 500px;"></li>
-               <li><img src="https://raw.githubusercontent.com/MohammedAlsudani/MohammedAlsudani.github.io/master/certifications/cert3.jpg" style="width: 500px;"></li>
-               <li><img src="https://raw.githubusercontent.com/MohammedAlsudani/MohammedAlsudani.github.io/master/certifications/cert4.jpg" style="width: 500px;"></li>
-               <li><img src="https://raw.githubusercontent.com/MohammedAlsudani/MohammedAlsudani.github.io/master/certifications/cert5.jpg" style="width: 500px;"></li>
-            </ul>
-         </div>
-  
-         <h3 style="font-size: 20px; color: #FFFFFF;">Image Gallery</h3>
-    <div class="grid-container">
-        <div class="grid-item"><img src="apps/img (1).png" alt="Image 1" onclick="expandImage(this)"></div>
-        <div class="grid-item"><img src="apps/img (2).png" alt="Image 2" onclick="expandImage(this)"></div>
-        <div class="grid-item"><img src="apps/img (3).png" alt="Image 3" onclick="expandImage(this)"></div>
-        <div class="grid-item"><img src="apps/img (4).png" alt="Image 4" onclick="expandImage(this)"></div>
-        <div class="grid-item"><img src="apps/img (5).png" alt="Image 5" onclick="expandImage(this)"></div>
-        <div class="grid-item"><img src="apps/img (6).png" alt="Image 6" onclick="expandImage(this)"></div>
-        <div class="grid-item"><img src="apps/img (7).png" alt="Image 7" onclick="expandImage(this)"></div>
-    </div>
+      }
 
-    <div class="overlay" onclick="closeImage()">
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 10px;
+        padding: 20px;
+      }
+
+      .grid-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+
+      .grid-item img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+      }
+
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: none;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .overlay img {
+        max-width: 80%;
+        max-height: 80%;
+      }
+
+      .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        color: white;
+        font-size: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container fadeIn">
+      <h1 style="text-align: center;">
+        <img class="profile-image" src="https://avatars.githubusercontent.com/u/43975379?s=400&u=9855e733a152bcc48d1b726985ed8a2ad194bf47&v=4" alt="Hi GIF" />
+      </h1>
+      <h1 class="fadeInScale animated" style="text-align: center; font-size: 36px; color: #FFFFFF;">Hi, My name is Mohammed Alsudani</h1>
+      <h2 class="fadeInScale animated" style="text-align: center;">Senior Android Developer</h2>
+      <p style="text-align: center; color: #FFFFFF;"> Highly skilled in native app development with 7+ years of experience designing, building, and customizing android apps for various domains such as Hotel Management, Freight forwarding & shipping software solutions, Payment System, Doctor Booking, Health, and Fitness, Food Industry, Social Media Apps, Dating App, Productivity Apps, Service Providers, etc. </p>
+      <ul>
+        <li class="fadeIn animated" style="color: #FFFFFF;">🌍 I'm based in Moldova, Chișinău</li>
+        <li class="fadeIn animated" style="color: #FFFFFF;">🖥️ See my portfolio at <a href="http://materialuiux.com/">MaterialUiUx</a>
+        </li>
+        <li class="fadeIn animated" style="color: #FFFFFF;">✉️ You can contact me at <a href="mailto:alsudanimohammed1@gmail.com">alsudanimohammed1@gmail.com</a>
+        </li>
+        <li class="fadeIn animated" style="color: #FFFFFF;">👨‍💻 #SelfTaught Developer</li>
+        <li class="fadeIn animated" style="color: #FFFFFF;">🧠 I'm learning Machine Learning</li>
+        <li class="fadeIn animated" style="color: #FFFFFF;">⚡ Coffee flows through my veins, fueling my coding adventures and transforming caffeine into lines of logic and creativity. ☕💻</li>
+        <li class="fadeIn animated" style="color: #FFFFFF;">🤩 I have a passion for 🎵 music, 🎮 gaming.</li>
+      </ul>
+      <h3 style="font-size: 20px; color: #FFFFFF;">My Android skills include expertise in:</h3>
+      <p style="color: #FFFFFF;" class="fadeIn animated"> ❅ Kotlin <br> ❅ Java <br> ❅ Kotlin <br> ❅ Android Jetpack <br> ❅ Android app modularization <br> ❅ Android security <br> ❅ Android Architecture patterns such as MVC, MVP, MVVM <br> ❅ WebRTC <br> ❅ Dagger/Hilt <br> ❅ Rx (Java, Kotlin) <br> ❅ Kotlin Coroutines <br> ❅ Local Database management with SQLite, Realm, ORMLITE, Room <br> ❅ working with APIs (Retrofit, Volley, okhttp3) <br> ❅ working with real-time APIs (WebSockets, XMPP, IoT MQTT) <br> ❅ Firebase Integration <br> ❅ Maps (Google, MapBox, Openstreetmap) <br> ❅ social media integration with Facebook, Twitter, and Instagram <br> ❅ PDF Rendering <br> ❅ 3D Model Rendering <br> ❅ device hardware such as Bluetooth, GPS, Accelerometer, Camera, etc. <br> ❅ testing (Unit testing, Espresso testing, Firebase test lab) <br>
+      </p>
+      <h3 style="font-size: 20px; color: #FFFFFF;">In addition to my Android skills, I also have expertise in:</h3>
+      <p style="color: #FFFFFF;" class="fadeIn animated"> ❅ Data Structures and Algorithms <br> ❅ OOP patterns <br> ❅ JavaFx <br> ❅ Spring framework <br> ❅ iOS development <br> ❅ Swift <br> ❅ Javascript <br> ❅ TypeScript <br> ❅ React Native <br> ❅ Angular <br> ❅ HTML <br> ❅ CSS <br> ❅ Git (Bitbucket, GitHub, Gitlab) <br> ❅ Agile methodology <br>
+      </p>
+      <p align="left">
+        <a href="https://www.oracle.com/java/" target="_blank" rel="noreferrer">
+          <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/java-colored.svg" width="36" height="36" alt="Java" />
+        </a>
+        <a href="https://kotlinlang.org/" target="_blank" rel="noreferrer">
+          <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/kotlin-colored.svg" width="36" height="36" alt="Kotlin" />
+        </a>
+        <a href="https://developer.apple.com/swift/" target="_blank" rel="noreferrer">
+          <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/swift-colored.svg" width="36" height="36" alt="Swift" />
+        </a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer">
+          <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/javascript-colored.svg" width="36" height="36" alt="JavaScript" />
+        </a>
+        <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer">
+          <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/typescript-colored.svg" width="36" height="36" alt="TypeScript" />
+        </a>
+        <a href="https://spring.io/" target="_blank" rel="noreferrer">
+          <img src="https://user-images.githubusercontent.com/51391473/113920973-14da8880-97ab-11eb-8223-ffa85d487831.png" width="36" height="36" alt="Spring" />
+        </a>
+        <a href="https://reactjs.org/" target="_blank" rel="noreferrer">
+          <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/react-colored.svg" width="36" height="36" alt="React" />
+        </a>
+        <a href="https://angular.io/" target="_blank" rel="noreferrer">
+          <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/angularjs-colored.svg" width="36" height="36" alt="Angular" />
+        </a>
+        <a href="https://firebase.google.com/" target="_blank" rel="noreferrer">
+          <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/firebase-colored.svg" width="36" height="36" alt="Firebase" />
+        </a>
+        <a href="https://www.mysql.com/" target="_blank" rel="noreferrer">
+          <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/mysql-colored.svg" width="36" height="36" alt="MySQL" />
+        </a>
+        <a href="https://www.adobe.com/uk/products/photoshop.html" target="_blank" rel="noreferrer">
+          <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/photoshop-colored.svg" width="36" height="36" alt="Photoshop" />
+        </a>
+        <a href="https://www.figma.com/" target="_blank" rel="noreferrer">
+          <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/figma-colored.svg" width="36" height="36" alt="Figma" />
+        </a>
+        <a href="https://git-scm.com/" target="_blank" rel="noreferrer">
+          <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/git-colored.svg" width="36" height="36" alt="Git" />
+        </a>
+      </p>
+      <h3 style="font-size: 20px; color: #FFFFFF;">Socials</h3>
+      <p>
+        <a href="https://www.github.com/MohammedAlsudani">
+          <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/github.svg" width="32" height="32" />
+        </a>
+        <a href="https://www.linkedin.com/in/mohammed-alsudani-259a28152">
+          <img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/linkedin.svg" width="32" height="32" />
+        </a>
+      </p>
+      <h3 style="font-size: 20px; color: #FFFFFF;">Past work reviews</h3>
+      <div>
+        <ul class="image-list">
+          <li>
+            <img src="https://raw.githubusercontent.com/MohammedAlsudani/MohammedAlsudani.github.io/master/reviews/review%20(1).png">
+          </li>
+          <li>
+            <img src="https://raw.githubusercontent.com/MohammedAlsudani/MohammedAlsudani.github.io/master/reviews/review%20(2).png">
+          </li>
+          <li>
+            <img src="https://raw.githubusercontent.com/MohammedAlsudani/MohammedAlsudani.github.io/master/reviews/review%20(3).png">
+          </li>
+          <li>
+            <img src="https://raw.githubusercontent.com/MohammedAlsudani/MohammedAlsudani.github.io/master/reviews/review%20(4).png">
+          </li>
+          <li>
+            <img src="https://raw.githubusercontent.com/MohammedAlsudani/MohammedAlsudani.github.io/master/reviews/review%20(5).png">
+          </li>
+          <li>
+            <img src="https://raw.githubusercontent.com/MohammedAlsudani/MohammedAlsudani.github.io/master/reviews/review%20(6).png">
+          </li>
+          <li>
+            <img src="https://raw.githubusercontent.com/MohammedAlsudani/MohammedAlsudani.github.io/master/reviews/review%20(7).png">
+          </li>
+          <li>
+            <img src="https://raw.githubusercontent.com/MohammedAlsudani/MohammedAlsudani.github.io/master/reviews/review%20(8).png">
+          </li>
+          <li>
+            <img src="https://raw.githubusercontent.com/MohammedAlsudani/MohammedAlsudani.github.io/master/reviews/review%20(9).png">
+          </li>
+          <li>
+            <img src="https://raw.githubusercontent.com/MohammedAlsudani/MohammedAlsudani.github.io/master/reviews/review%20(10).png">
+          </li>
+        </ul>
+      </div>
+      <h3 style="font-size: 20px; color: #FFFFFF;">Certifications</h3>
+      <div>
+        <ul class="image-list">
+          <li>
+            <img src="https://raw.githubusercontent.com/MohammedAlsudani/MohammedAlsudani.github.io/master/certifications/cert0.jpg" style="width: 500px;">
+          </li>
+          <li>
+            <img src="https://raw.githubusercontent.com/MohammedAlsudani/MohammedAlsudani.github.io/master/certifications/cert1.jpg" style="width: 500px;">
+          </li>
+          <li>
+            <img src="https://raw.githubusercontent.com/MohammedAlsudani/MohammedAlsudani.github.io/master/certifications/cert2.jpg" style="width: 500px;">
+          </li>
+          <li>
+            <img src="https://raw.githubusercontent.com/MohammedAlsudani/MohammedAlsudani.github.io/master/certifications/cert3.jpg" style="width: 500px;">
+          </li>
+          <li>
+            <img src="https://raw.githubusercontent.com/MohammedAlsudani/MohammedAlsudani.github.io/master/certifications/cert4.jpg" style="width: 500px;">
+          </li>
+          <li>
+            <img src="https://raw.githubusercontent.com/MohammedAlsudani/MohammedAlsudani.github.io/master/certifications/cert5.jpg" style="width: 500px;">
+          </li>
+        </ul>
+      </div>
+      <h3 style="font-size: 20px; color: #FFFFFF;">Image Gallery</h3>
+      <div class="grid-container">
+        <div class="grid-item">
+          <img src="apps/img (1).png" alt="Image 1" onclick="expandImage(this)">
+        </div>
+        <div class="grid-item">
+          <img src="apps/img (2).png" alt="Image 2" onclick="expandImage(this)">
+        </div>
+        <div class="grid-item">
+          <img src="apps/img (3).png" alt="Image 3" onclick="expandImage(this)">
+        </div>
+        <div class="grid-item">
+          <img src="apps/img (4).png" alt="Image 4" onclick="expandImage(this)">
+        </div>
+        <div class="grid-item">
+          <img src="apps/img (5).png" alt="Image 5" onclick="expandImage(this)">
+        </div>
+        <div class="grid-item">
+          <img src="apps/img (6).png" alt="Image 6" onclick="expandImage(this)">
+        </div>
+        <div class="grid-item">
+          <img src="apps/img (7).png" alt="Image 7" onclick="expandImage(this)">
+        </div>
+      </div>
+      <div class="overlay" onclick="closeImage()">
         <span class="close-btn">&times;</span>
         <img id="expanded-image" src="" alt="Expanded Image">
-    </div>
-
       </div>
-
-   
+    </div>
     <script>
-        function expandImage(image) {
-            var expandedImage = document.getElementById('expanded-image');
-            expandedImage.src = image.src;
-            document.querySelector('.overlay').style.display = 'flex';
-        }
+      function expandImage(image) {
+        var expandedImage = document.getElementById('expanded-image');
+        expandedImage.src = image.src;
+        document.querySelector('.overlay').style.display = 'flex';
+      }
 
-        function closeImage() {
-            document.querySelector('.overlay').style.display = 'none';
-        }
+      function closeImage() {
+        document.querySelector('.overlay').style.display = 'none';
+      }
     </script>
-   </body>
+  </body>
 </html>
