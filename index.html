@@ -131,6 +131,51 @@
          transform: translateY(0);
          }
          }
+             .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 10px;
+            padding: 20px;
+        }
+
+        .grid-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .grid-item img {
+            max-width: 100%;
+            height: auto;
+            cursor: pointer;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .overlay img {
+            max-width: 80%;
+            max-height: 80%;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            color: white;
+            font-size: 24px;
+        }
       </style>
    </head>
    <body>
@@ -141,9 +186,7 @@
          <p style="text-align: center; color: #FFFFFF;">
             Highly skilled in native app development with 7+ years of experience designing, building, and customizing android apps for various domains such as Hotel Management, Freight forwarding & shipping software solutions, Payment System, Doctor Booking, Health, and Fitness, Food Industry, Social Media Apps, Dating App, Productivity Apps, Service Providers, etc.
          </p>
-         <!--          <div style="display: flex; justify-content: center;">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/cScPnfdFY1k" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-            </div> -->
+    
          <ul>
             <li class="fadeIn animated" style="color: #FFFFFF;">🌍 I'm based in Moldova, Chișinău</li>
             <li class="fadeIn animated" style="color: #FFFFFF;">🖥️ See my portfolio at <a href="http://materialuiux.com/">MaterialUiUx</a></li>
@@ -241,5 +284,33 @@
             </ul>
          </div>
       </div>
+
+       <h1>Image Gallery</h1>
+    <div class="grid-container">
+        <div class="grid-item"><img src="apps/img (1).png" alt="Image 1" onclick="expandImage(this)"></div>
+        <div class="grid-item"><img src="apps/img (2).png" alt="Image 2" onclick="expandImage(this)"></div>
+        <div class="grid-item"><img src="apps/img (3).png" alt="Image 3" onclick="expandImage(this)"></div>
+        <div class="grid-item"><img src="apps/img (4).png" alt="Image 4" onclick="expandImage(this)"></div>
+        <div class="grid-item"><img src="apps/img (5).png" alt="Image 5" onclick="expandImage(this)"></div>
+        <div class="grid-item"><img src="apps/img (6).png" alt="Image 6" onclick="expandImage(this)"></div>
+        <div class="grid-item"><img src="apps/img (7).png" alt="Image 7" onclick="expandImage(this)"></div>
+    </div>
+
+    <div class="overlay" onclick="closeImage()">
+        <span class="close-btn">&times;</span>
+        <img id="expanded-image" src="" alt="Expanded Image">
+    </div>
+
+    <script>
+        function expandImage(image) {
+            var expandedImage = document.getElementById('expanded-image');
+            expandedImage.src = image.src;
+            document.querySelector('.overlay').style.display = 'flex';
+        }
+
+        function closeImage() {
+            document.querySelector('.overlay').style.display = 'none';
+        }
+    </script>
    </body>
 </html>
