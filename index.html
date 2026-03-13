@@ -6,10 +6,12 @@
   <meta name="viewport" content="width=device-width initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-  <!-- Materialize - Compiled and minified CSS-->
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css" />
-  <!-- Font Awesome Icon - CSS-->
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <!-- Custom Styles-->
   <link rel="stylesheet" href="/assets/css/style.css" />
   <title>Mohammed Alsudani | Software Developer</title>
@@ -65,201 +67,270 @@
 </head>
 
 <body>
-  <nav class="hide-on-small-only">
-    <ul class="side-nav fixed section table-of-contents">
 
-      <li class="logo">
-        <a id="logo-container" aria-label="Navigate to the beginning of the page" href="#intro"
-          class="brand-logo grey-blue-text">
-          <img src="/assets/img/profile-img.jpg" class="circle img-responsive profile-pic" alt="avatar">
-        </a>
-      </li>
+  <!-- Theme Toggle -->
+  <button id="theme-toggle" aria-label="Toggle theme">☀️</button>
 
-      <li class="bold">
-        <a aria-label="Navigate to the About section" href="#about" class="waves-effect waves-dark teal-text"><i
-            class="mdi-social-person small"></i><span>About</span></a>
-      </li>
-      
-      <li class="bold">
-        <a aria-label="Navigate to the Video section" href="#video-intro" class="waves-effect waves-dark teal-text">
-          <i class="mdi-av-play-circle-outline small"></i><span>Video</span>
-        </a>
-      </li>
+  <!-- Mobile Hamburger -->
+  <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+    <span></span><span></span><span></span>
+  </button>
 
-      <li class="bold">
-        <a aria-label="Navigate to the Experience section" href="#experience"
-          class="waves-effect waves-dark teal-text"><i
-            class="mdi-action-trending-up small"></i><span>Experience</span></a>
-      </li>
+  <!-- Mobile Overlay -->
+  <div class="mobile-overlay" id="mobile-overlay"></div>
 
-      <li class="bold">
-        <a aria-label="Navigate to the Testimonials section" href="#testimonials"
-          class="waves-effect waves-dark teal-text"><i class="mdi-action-stars small"></i><span>Testimonials</span></a>
-      </li>
-
-      <li class="bold">
-        <a aria-label="Navigate to the Projects section" href="#projects" class="waves-effect waves-dark teal-text"><i
-            class="mdi-av-my-library-books small"></i><span>Projects</span></a>
-      </li>
-
-      <li class="bold">
-        <a aria-label="Navigate to the Education section" href="#education" class="waves-effect waves-dark teal-text"><i
-            class="mdi-social-school small"></i><span>Education</span></a>
-      </li>
-
-      <li class="bold">
-        <a aria-label="Navigate to the Contact section" href="#contact" class="waves-effect waves-dark teal-text"><i
-            class="mdi-content-mail small"></i><span>Contact</span></a>
-      </li>
+  <!-- Sidebar Navigation -->
+  <nav class="sidebar" id="sidebar">
+    <div class="sidebar-profile">
+      <img src="/assets/img/profile-img.jpg" class="sidebar-avatar" alt="Mohammed Alsudani"
+        onerror="this.src='https://ui-avatars.com/api/?name=Mohammed+Alsudani&size=80&background=00e5b0&color=080c10&bold=true'" />
+      <div class="sidebar-name">Mohammed Alsudani</div>
+      <div class="sidebar-title">Software Developer</div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#intro" class="nav-link active"><i class="fa-solid fa-house"></i> Home</a></li>
+      <li><a href="#about" class="nav-link"><i class="fa-solid fa-user"></i> About</a></li>
+      <li><a href="#video-intro" class="nav-link"><i class="fa-solid fa-circle-play"></i> Video</a></li>
+      <li><a href="#experience" class="nav-link"><i class="fa-solid fa-briefcase"></i> Experience</a></li>
+      <li><a href="#testimonials" class="nav-link"><i class="fa-solid fa-star"></i> Testimonials</a></li>
+      <li><a href="#projects" class="nav-link"><i class="fa-solid fa-code"></i> Projects</a></li>
+      <li><a href="#education" class="nav-link"><i class="fa-solid fa-graduation-cap"></i> Education</a></li>
+      <li><a href="#contact" class="nav-link"><i class="fa-solid fa-envelope"></i> Contact</a></li>
     </ul>
-  </nav>
-
-  <!-- Nav class 2 -->
-  <nav class="hide-on-large only trigger z-depth-1">
-    <a aria-label="Toggle visibility of the mobile navbar" href="#" data-activates="slide-out"
-      class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-    <div class="name-title">
-      <a id="name" aria-label="Navigate to the beginning of the page" href="#" class="teal-text">Mohammed
-        Alsudani</a><span class="black-text">Software Developer</span>
+    <div class="sidebar-socials">
+      <a href="https://www.linkedin.com/in/mohammeddev1995/" target="_blank" aria-label="LinkedIn">
+        <i class="fa-brands fa-linkedin-in"></i>
+      </a>
+      <a href="https://github.com/MohammedAlsudani/" target="_blank" aria-label="GitHub">
+        <i class="fa-brands fa-github"></i>
+      </a>
+      <a href="mailto:alsudanimohammed1@gmail.com" aria-label="Email">
+        <i class="fa-solid fa-envelope"></i>
+      </a>
     </div>
   </nav>
 
-  <!-- Nav class 3 -->
-  <nav class="hide-on-large only">
-    <ul id="slide-out" class="side-nav">
-      <li class="bold">
-        <a aria-label="Navigate to the About section" href="#about" class="waves-effect waves-dark teal-text"><i
-            class="mdi-social-person small"></i><span>About</span></a>
-      </li>
+  <!-- MAIN CONTENT -->
+  <div class="main-content">
 
-      <li class="bold">
-        <a aria-label="Navigate to the Experience section" href="#experience"
-          class="waves-effect waves-dark teal-text"><i
-            class="mdi-action-trending-up small"></i><span>Experience</span></a>
-      </li>
+    <!-- ===== HERO ===== -->
+    <section id="intro">
+      <div class="hero-bg">
+        <div class="hero-orb hero-orb-1"></div>
+        <div class="hero-orb hero-orb-2"></div>
+        <div class="hero-orb hero-orb-3"></div>
+        <div class="hero-grid"></div>
+      </div>
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="hero-badge-dot"></span>
+          Available for new opportunities
+        </div>
+        <h1 class="hero-heading">
+          Hi, I'm<br>
+          <span class="name">Mohammed Alsudani.</span>
+        </h1>
+        <div class="hero-typing-line" id="typing-text">Android Developer</div>
+        <p class="hero-description">
+          Self-driven, quick starter, passionate programmer with a curious mind who enjoys solving complex and
+          challenging real-world problems. 8+ years building exceptional software.
+        </p>
+        <div class="hero-cta">
+          <a href="#contact" class="btn-primary">Get In Touch</a>
+          <a href="#about" class="btn-outline">View My Work</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat-item">
+            <div class="hero-stat-num">8+</div>
+            <div class="hero-stat-label">Years Exp.</div>
+          </div>
+          <div class="hero-stat-item">
+            <div class="hero-stat-num">5</div>
+            <div class="hero-stat-label">Companies</div>
+          </div>
+          <div class="hero-stat-item">
+            <div class="hero-stat-num">25+</div>
+            <div class="hero-stat-label">Reviews</div>
+          </div>
+          <div class="hero-stat-item">
+            <div class="hero-stat-num">∞</div>
+            <div class="hero-stat-label">Curiosity</div>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <div class="scroll-indicator-line"></div>
+        <span>scroll</span>
+      </div>
+    </section>
 
-      <li class="bold">
-        <a aria-label="Navigate to the Testimonials section" href="#testimonials"
-          class="waves-effect waves-dark teal-text"><i class="mdi-action-stars small"></i><span>Testimonials</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Projects section" href="#projects" class="waves-effect waves-dark teal-text"><i
-            class="mdi-av-my-library-books small"></i><span>Projects</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Education section" href="#education" class="waves-effect waves-dark teal-text"><i
-            class="mdi-social-school small"></i><span>Education</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Contact section" href="#contact" class="waves-effect waves-dark teal-text"><i
-            class="mdi-content-mail small"></i><span>Contact</span></a>
-      </li>
-    </ul>
-  </nav>
+    <!-- ===== ABOUT ===== -->
+    <section id="about">
+      <div class="section">
+        <div class="section-header reveal">
+          <span class="section-tag">01</span>
+          <h2 class="section-title">About Me</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="about-grid">
+          <div class="about-text reveal reveal-delay-1">
 
-  <!-- Main Content-->
-  <main>
-    <!-- Section: Heading lines and image -->
-    <section id="intro" class="section scrollspy full-height">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="col-md-9">
-          <div class="content section-padding valign" style="margin-left: 10%; margin-top: 50px;">
-            <div class="caption">
-              <h2>Hi, I'm <span class="teal">Mohammed Alsudani.</span></h2>
-              <h5 style="color:#fff">A <span class="typing" style="font-weight: 300; color:#004d40"></span></h5>
-              <h5>Self-driven, quick starter, passionate programmer with a curious mind who enjoys solving a complex and
-                challenging real-world problems.</h5>
+            <p>As an adept Software Developer with over <strong>8 years of expertise</strong>, I specialize in Mobile
+              App development, full-stack development, and <strong>AI/ML integration</strong>. I enjoy problem-solving
+              and coding, always striving to bring 100% to the work I do.</p>
+            <p>Passionate about developing complex applications that solve real-world problems impacting millions of
+              users, I love being a team member — it's a great opportunity to share experiences and meet wonderful
+              people. ^_^</p>
+            <p>Currently expanding into <strong>Machine Learning</strong> — training models, integrating local AI models
+              into mobile and web apps, and connecting LLM APIs (OpenAI, Gemini, and more). Also exploring
+              <strong>AR/VR</strong> development with ARCore and ARKit to build immersive experiences.
+            </p>
+            <p>Looking for an opportunity to work in a challenging position combining my skills in Software Engineering,
+              which provides professional development, interesting experiences and personal growth.</p>
+
+          </div>
+          <div class="skills-grid reveal reveal-delay-2">
+            <div class="skill-category">
+              <div class="skill-cat-label">Languages</div>
+              <div class="skill-tags">
+                <span class="skill-tag">Java</span><span class="skill-tag">Kotlin</span>
+                <span class="skill-tag">Swift</span><span class="skill-tag">TypeScript</span>
+                <span class="skill-tag">JavaScript</span><span class="skill-tag">C++</span>
+                <span class="skill-tag">Python</span><span class="skill-tag">R</span>
+                <span class="skill-tag">HTML/CSS</span>
+              </div>
             </div>
-            <div class="social">
-              <a href="https://www.linkedin.com/in/mohammed-alsudani-259a28152/" target="_blank">
-                <button class="icon-btn linkedin">
-                  <i class="fa fa-linkedin"></i>
-                </button>
-              </a>
-              <a href="https://github.com/MohammedAlsudani/" target="_blank">
-                <button class="icon-btn github">
-                  <i class="fa fa-github"></i>
-                </button>
-              </a>
+            <div class="skill-category">
+              <div class="skill-cat-label">Mobile</div>
+              <div class="skill-tags">
+                <span class="skill-tag">Native Android</span><span class="skill-tag">Native iOS</span>
+                <span class="skill-tag">Jetpack Compose</span><span class="skill-tag">SwiftUI</span>
+                <span class="skill-tag">KMM</span><span class="skill-tag">React Native</span>
+                <span class="skill-tag">Wear OS</span><span class="skill-tag">Android TV</span>
+                <span class="skill-tag">Android Auto</span><span class="skill-tag">Android Widgets</span>
+                <span class="skill-tag">XML</span>
+                <span class="skill-tag">Xcode Storyboard</span>
+                <span class="skill-tag">App Security</span>
+                <span class="skill-tag">ARCore</span>
+                <span class="skill-tag">ARKit</span>
+                <span class="skill-tag">SceneKit</span>
+                <span class="skill-tag">OpenGL ES</span>
+                <span class="skill-tag">Unity (AR/VR)</span>
+                <span class="skill-tag">WebXR</span>
+              </div>
             </div>
-            <div class='buttons'>
-              <a href="#about" class="readme">Read More</a>
-              <a href="#contact" class="contactme">Contact Me</a>
+            <div class="skill-category">
+              <div class="skill-cat-label">Backend & Web</div>
+              <div class="skill-tags">
+                <span class="skill-tag">Spring Boot</span><span class="skill-tag">Spring MVC</span>
+                <span class="skill-tag">Angular</span><span class="skill-tag">JavaFX</span>
+                <span class="skill-tag">Hibernate</span><span class="skill-tag">Thymeleaf</span>
+                <span class="skill-tag">MySQL</span><span class="skill-tag">MongoDB</span>
+                <span class="skill-tag">SQLite</span><span class="skill-tag">Room</span>
+                <span class="skill-tag">Realm</span><span class="skill-tag">ORMLITE</span>
+                <span class="skill-tag">Bootstrap</span>
+              </div>
+            </div>
+            <!-- Add after Architecture & Patterns category -->
+            <div class="skill-category">
+              <div class="skill-cat-label">AI & Machine Learning</div>
+              <div class="skill-tags">
+                <span class="skill-tag">Machine Learning</span>
+                <span class="skill-tag">Model Training</span>
+                <span class="skill-tag">TensorFlow</span>
+                <span class="skill-tag">PyTorch</span>
+                <span class="skill-tag">scikit-learn</span>
+                <span class="skill-tag">Local Model Integration</span>
+                <span class="skill-tag">On-Device ML</span>
+                <span class="skill-tag">LLM API Integration</span>
+                <span class="skill-tag">OpenAI API</span>
+                <span class="skill-tag">Gemini API</span>
+                <span class="skill-tag">TensorFlow Lite</span>
+                <span class="skill-tag">ML Kit</span>
+                <span class="skill-tag">Ollama</span>
+              </div>
+            </div>
+            <div class="skill-category">
+              <div class="skill-cat-label">Networking & Real-time</div>
+              <div class="skill-tags">
+                <span class="skill-tag">Retrofit</span><span class="skill-tag">OkHttp3</span>
+                <span class="skill-tag">Ktor</span><span class="skill-tag">Volley</span>
+                <span class="skill-tag">WebRTC</span><span class="skill-tag">WebSockets</span>
+                <span class="skill-tag">RSocket</span><span class="skill-tag">XMPP</span>
+                <span class="skill-tag">MQTT / IoT</span>
+              </div>
+            </div>
+            <div class="skill-category">
+              <div class="skill-cat-label">Cloud, Tools & DevOps</div>
+              <div class="skill-tags">
+                <span class="skill-tag">Firebase</span><span class="skill-tag">AWS</span>
+                <span class="skill-tag">GCP</span><span class="skill-tag">Oracle Cloud</span>
+                <span class="skill-tag">Docker</span><span class="skill-tag">Git</span>
+                <span class="skill-tag">Bitbucket</span><span class="skill-tag">GitLab</span>
+                <span class="skill-tag">JIRA</span><span class="skill-tag">WordPress</span>
+                <span class="skill-tag">GitHub</span>
+              </div>
+            </div>
+            <div class="skill-category">
+              <div class="skill-cat-label">Architecture & Patterns</div>
+              <div class="skill-tags">
+                <span class="skill-tag">MVVM</span><span class="skill-tag">MVP</span>
+                <span class="skill-tag">MVC</span><span class="skill-tag">Clean Architecture</span>
+                <span class="skill-tag">Dagger / Hilt</span><span class="skill-tag">RxJava</span>
+                <span class="skill-tag">Coroutines</span><span class="skill-tag">OOP Patterns</span>
+                <span class="skill-tag">Delegate (Swift)</span>
+              </div>
+            </div>
+            <div class="skill-category">
+              <div class="skill-cat-label">Device & Rendering</div>
+              <div class="skill-tags">
+                <span class="skill-tag">Bluetooth</span><span class="skill-tag">GPS</span>
+                <span class="skill-tag">Camera</span><span class="skill-tag">Accelerometer</span>
+                <span class="skill-tag">Google Maps</span><span class="skill-tag">MapBox</span>
+                <span class="skill-tag">OpenStreetMap</span><span class="skill-tag">PDF Rendering</span>
+                <span class="skill-tag">3D Model Rendering</span>
+              </div>
+            </div>
+            <div class="skill-category">
+              <div class="skill-cat-label">Testing & Distribution</div>
+              <div class="skill-tags">
+                <span class="skill-tag">Unit Testing</span><span class="skill-tag">Espresso</span>
+                <span class="skill-tag">Firebase Test Lab</span>
+                <span class="skill-tag">Google Play Store</span><span class="skill-tag">Apple App Store</span>
+                <span class="skill-tag">In-App Purchase</span><span class="skill-tag">Stripe</span>
+                <span class="skill-tag">Google Play Billing Library</span>
+              </div>
+            </div>
+            <div class="skill-category">
+              <div class="skill-cat-label">Social Media Integration</div>
+              <div class="skill-tags">
+                <span class="skill-tag">Facebook</span>
+                <span class="skill-tag">Twitter</span>
+                <span class="skill-tag">Instagram</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Section: About -->
-    <section id="about" class="section scrollspy">
-      <h3 class="page-title white-text teal">About</h3>
-      <div class="container flow-text">
-        <p>
-          As an adept Software Developer with over 8 years of expertise, I specialize in Mobile App development and
-          full-stack development. I enjoy problem-solving and coding, always striving to bring 100% to the work I do.
-          Passionate about developing complex applications that solve real-world problems impacting millions of users, I
-          love being a team member; it's a great opportunity to share experiences and meet wonderful people. ^_^
-        <p>
-        <ul>
-          <li><b>Languages:</b> Java, C++, Kotlin, Swift, Javascript, Typescript, HTML/CSS, R, Python</li>
-          <li><b>Frameworks:</b> Native Android Development, Native iOS Development, Cross-Platform Development (KMM -
-            Kotlin Multiplatform Mobile, React Native), Spring framework(MVC & BOOT), Angular, JavaFx</li>
-          <li><b>Databases:</b> SQLite, Realm, ORMLITE, Room, MySQL, Hibernate, MongoDB</li>
-          <li><b>Networking Libraries:</b>Ktor, Retrofit, Okhttp3, Volley</li>
-          <li><b>User Interface:</b> XML, Jetpack Compose, Xcode Storyboard, SwiftUI, HTML/CSS, Bootstrap, Thymeleaf
-          </li>
-          <li><b>Dependency Injection:</b> Dagger/Hilt</li>
-          <li><b>App Architecture Patterns:</b> MVC, MVP, MVVM, Delegate (Swift)</li>
-          <li><b>Android Platforms and Features:</b> Phone/Tablet, Wear OS, Android TV/Android Auto, Android Widgets,
-            Android Jetpack Libraries, Android App Modularization, App Security</li>
-          <li><b>Real-time Communication:</b>RSocket, WebRTC, WebSockets, XMPP, IoT MQTT</li>
-          <li><b>Mapping Technologies:</b> Google Maps, MapBox, OpenStreetMap</li>
-          <li><b>Social Media Integration:</b> Facebook, Twitter, Instagram</li>
-          <li><b>Rendering:</b> PDF Rendering, 3D Model Rendering</li>
-          <li><b>Device Hardware Integration:</b> Bluetooth, GPS, Accelerometer, Camera, etc.</li>
-          <li><b>Testing:</b> Unit testing, Espresso testing, Firebase Test Lab</li>
-          <li><b>Tools & Technologies:</b> Git (Bitbucket, GitHub, Gitlab), Firebase, WordPress, Docker, AWS, GCP, JIRA
-          </li>
-          <li><b>Cloud Platforms:</b> Google Cloud, Amazon Web Services (AWS), Oracle Cloud</li>
-          <li><b>App Deployment:</b> Google Play Store, Apple App Store</li>
-          <li><b>Billing Libraries:</b> Google Play Billing Library, iOS In-App Purchase Framework, Stripe</li>
-          <li><b>General Software Engineering Skills:</b> Data Structures and Algorithms, OOP patterns, Best Practices,
-            Clean Architecture</li>
-        </ul>
-        </p>
-        <p>
-          Looking for an opportunity to work in a challenging position combining my skills in Software Engineering,
-          which provides professional development, interesting experiences and personal growth.
-        </p>
-      </div>
-    </section>
-
-    <!-- Video Introduction Section -->
-    <section id="video-intro" class="section scrollspy">
-      <h3 class="page-title">Meet Mohammed</h3>
-    
-      <div class="video-container-wrapper">
-        <div class="video-card">
-          <!-- Video Header -->
-          <div class="video-header">
-            <h4>A Personal Introduction</h4>
-            <p>Learn more about my journey, expertise, and passion for software development</p>
-          </div>
-    
-          <!-- Video Player -->
-          <div class="video-wrapper">
-            <iframe src="https://www.youtube.com/embed/M9MohsB1eGE"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen>
-            </iframe>
-          </div>
-    
-          <!-- Video Description -->
-          <div class="video-description">
-            <h5>What You'll Learn:</h5>
-            <ul class="video-highlights">
+    <!-- ===== VIDEO ===== -->
+    <section id="video-intro">
+      <div class="section">
+        <div class="section-header reveal">
+          <span class="section-tag">02</span>
+          <h2 class="section-title">Meet Mohammed</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="video-wrapper reveal reveal-delay-1">
+          <iframe src="https://www.youtube.com/embed/M9MohsB1eGE"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        </div>
+        <div class="video-meta">
+          <div class="video-meta-item reveal reveal-delay-2">
+            <h5>What You'll Learn</h5>
+            <ul>
               <li>My 8+ years journey in software development</li>
               <li>Key projects and technical accomplishments</li>
               <li>My approach to solving complex problems</li>
@@ -267,454 +338,403 @@
               <li>What drives me as a developer</li>
             </ul>
           </div>
-    
-          <!-- Call to Action -->
-          <div class="video-cta">
-            <p>Interested in working together?</p>
-            <a href="#contact" class="btn-contact">Get In Touch</a>
+          <div class="video-meta-item reveal reveal-delay-3">
+            <h5>Why Work Together</h5>
+            <ul>
+              <li>Proven track record across 5 companies</li>
+              <li>25+ verified client reviews</li>
+              <li>How I deliver exceptional, on-time results</li>
+              <li>Passionate about solving real-world problems</li>
+              <li>Strong team collaborator and communicator</li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Third Section: Experience -->
-    <section id="experience" class="section scrollspy">
-      <h3 class="page-title white-text teal">Experience</h3>
-      <div class="container">
+    <!-- ===== EXPERIENCE ===== -->
+    <section id="experience">
+      <div class="section">
+        <div class="section-header reveal">
+          <span class="section-tag">03</span>
+          <h2 class="section-title">Experience</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="timeline">
 
-        <div class="card">
-          <div class="card-content">
-            <div class="row">
-              <div class="col s12 m2">
-                <a href="https://materialuiux.com" target="_blank">
-                  <img alt="MaterialUIUX logo" src="/assets/img/materialuiux-logo.png"
-                    class="responsive-img center-block" />
+          <!-- Happitech -->
+          <div class="timeline-item reveal">
+            <div class="timeline-dot">
+              <img src="/assets/img/happitech-logo.png" alt="Happitech"
+                onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;font-size:20px\'>🏥</div>'" />
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <a href="https://happitech.com" target="_blank" class="timeline-company">Happitech</a>
+                <span class="timeline-period">May 2024 – Present · Remote</span>
+              </div>
+              <div class="timeline-role">Senior Android Developer</div>
+              <div class="timeline-bullets">
+                <div class="timeline-bullet">Identified and resolved a critical issue in a legacy system, improving data
+                  consistency, system reliability, and workflow efficiency through detailed debugging and analysis.
+                </div>
+                <div class="timeline-bullet">Improved the existing Android app by refactoring legacy code, enhancing
+                  performance and maintainability.</div>
+                <div class="timeline-bullet">Fixed multiple critical bugs, ensuring a smoother user experience and
+                  reducing crash rates.</div>
+                <div class="timeline-bullet">Developed comprehensive documentation to support onboarding, testing, and
+                  maintenance processes.</div>
+                <div class="timeline-bullet">Updated the software to ensure compatibility with the latest Android
+                  versions and devices.</div>
+                <div class="timeline-bullet">Collaborated effectively with team members, answering technical questions
+                  and providing guidance to improve code quality.</div>
+                <div class="timeline-bullet">Analyzed the existing codebase to identify areas for optimization and
+                  implemented improvements.</div>
+                <div class="timeline-bullet">Worked closely with cross-functional teams to deliver updates that aligned
+                  with company objectives and user needs.</div>
+              </div>
+              <div class="timeline-tools">
+                <span class="tool-tag">Kotlin</span><span class="tool-tag">Java</span><span class="tool-tag">C++</span>
+                <span class="tool-tag">Python</span><span class="tool-tag">NDK</span><span class="tool-tag">MVVM</span>
+                <span class="tool-tag">SDK Dev</span><span class="tool-tag">Multi-Module</span>
+                <span class="tool-tag">API Design</span><span class="tool-tag">Agile</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- MaterialUIUX -->
+          <div class="timeline-item reveal reveal-delay-1">
+            <div class="timeline-dot">
+              <img src="/assets/img/materialuiux-logo.png" alt="MaterialUIUX"
+                onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;font-size:20px\'>🎨</div>'" />
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <a href="https://materialuiux.com" target="_blank" class="timeline-company">MaterialUIUX</a>
+                <span class="timeline-period">Apr 2017 – Present · Remote</span>
+              </div>
+              <div class="timeline-role">Senior Android Developer & Freelance Consultant</div>
+              <div class="timeline-bullets">
+                <div class="timeline-bullet">Established a successful freelance career, delivering high-quality
+                  solutions to clients worldwide across various platforms, including direct engagements and freelance
+                  marketplaces.</div>
+                <div class="timeline-bullet">Built a reputation for excellence through consistent performance and
+                  reliability, earning trust from clients across diverse industries.</div>
+                <div class="timeline-bullet">Collaborated with clients to successfully complete projects ranging from
+                  mobile application development to troubleshooting and optimization.</div>
+                <div class="timeline-bullet">Provided tailored solutions by leveraging expertise in Java, Kotlin, and
+                  other Android technologies, meeting unique client requirements.</div>
+                <div class="timeline-bullet">Maintained clear communication with clients to understand project needs,
+                  provide updates, and deliver results that consistently exceeded expectations.</div>
+                <div class="timeline-bullet">Demonstrated flexibility and adaptability by managing multiple project
+                  workflows and delivering within scope, on time, and within budget.</div>
+                <div class="timeline-bullet">Continuously enhanced technical skills and stayed updated with the latest
+                  trends and best practices in Android and software development.</div>
+              </div>
+              <div class="timeline-tools">
+                <span class="tool-tag">Java</span><span class="tool-tag">Kotlin</span><span class="tool-tag">C++</span>
+                <span class="tool-tag">Wear OS</span><span class="tool-tag">Jetpack Compose</span>
+                <span class="tool-tag">MQTT</span><span class="tool-tag">IoT</span><span
+                  class="tool-tag">Firebase</span>
+                <span class="tool-tag">Realm</span><span class="tool-tag">Room</span><span
+                  class="tool-tag">Bluetooth</span>
+                <span class="tool-tag">PDF & 3D Rendering</span><span class="tool-tag">Google Maps</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- WrkSpot -->
+          <div class="timeline-item reveal reveal-delay-2">
+            <div class="timeline-dot">
+              <img src="/assets/img/wrkspot-logo.jpeg" alt="WrkSpot"
+                onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;font-size:20px\'>🏢</div>'" />
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <a href="https://www.wrkspot.com/" target="_blank" class="timeline-company">WrkSpot</a>
+                <span class="timeline-period">Dec 2021 – Feb 2023 · Remote</span>
+              </div>
+              <div class="timeline-role">Senior Android Developer</div>
+              <div class="timeline-bullets">
+                <div class="timeline-bullet">Developed and maintained multiple Android applications, adhering to best
+                  practices and coding standards.</div>
+                <div class="timeline-bullet">Collaborated with product managers, designers, and other stakeholders to
+                  gather requirements and translate them into technical specifications.</div>
+                <div class="timeline-bullet">Implemented new features and functionalities, ensuring scalability,
+                  performance, and security.</div>
+                <div class="timeline-bullet">Optimized application performance, reducing load times by
+                  <strong>70%</strong> and increasing overall user satisfaction.
+                </div>
+                <div class="timeline-bullet">Conducted code reviews and provided constructive feedback to team members,
+                  fostering a culture of continuous improvement.</div>
+                <div class="timeline-bullet">Resolved critical issues and bugs in a timely manner, maintaining high
+                  levels of reliability and uptime.</div>
+                <div class="timeline-bullet">Assisted in updating applications on Google Play Console, ensuring
+                  compliance with platform requirements and smooth deployment processes.</div>
+                <div class="timeline-bullet">Actively participated in Agile development methodologies, including sprint
+                  planning, daily stand-ups, and retrospectives.</div>
+              </div>
+              <div class="timeline-tools">
+                <span class="tool-tag">Java</span><span class="tool-tag">Kotlin</span>
+                <span class="tool-tag">Wear OS</span><span class="tool-tag">Jetpack Compose</span>
+                <span class="tool-tag">MQTT</span><span class="tool-tag">Hilt</span>
+                <span class="tool-tag">RxJava</span><span class="tool-tag">Realm</span>
+                <span class="tool-tag">Room</span><span class="tool-tag">Firebase</span>
+                <span class="tool-tag">Retrofit</span><span class="tool-tag">Google Maps</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- ChatWise -->
+          <div class="timeline-item reveal reveal-delay-3">
+            <div class="timeline-dot">
+              <img src="/assets/img/chatwise-logo.png" alt="ChatWise"
+                onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;font-size:20px\'>💬</div>'" />
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <a href="https://chatwise.co.uk/" target="_blank" class="timeline-company">ChatWise</a>
+                <span class="timeline-period">Sep 2020 – May 2022 · Remote</span>
+              </div>
+              <div class="timeline-role">Senior Android Developer</div>
+              <div class="timeline-bullets">
+                <div class="timeline-bullet">Played a pivotal role in driving a high-impact project to success,
+                  demonstrating exceptional problem-solving skills and technical expertise.</div>
+                <div class="timeline-bullet">Addressed critical bugs and optimized application performance, ensuring a
+                  seamless user experience.</div>
+                <div class="timeline-bullet">Integrated advanced features, such as auto-playing video functionality
+                  during post scrolls and innovative matching algorithms for randomized user pairings during timed
+                  calls.</div>
+                <div class="timeline-bullet">Contributed significantly to enhancing the chat functionality, improving
+                  user engagement and satisfaction.</div>
+                <div class="timeline-bullet">Took the initiative to recruit and onboard new team members, fostering a
+                  collaborative and growth-oriented work environment.</div>
+                <div class="timeline-bullet">Demonstrated proficiency in Java and Kotlin, leveraging Android SDK and
+                  related tools to develop robust mobile applications.</div>
+                <div class="timeline-bullet">Conducted thorough code reviews and provided constructive feedback,
+                  ensuring adherence to best practices and coding standards.</div>
+                <div class="timeline-bullet">Actively participated in Agile development methodologies, including sprint
+                  planning, daily stand-ups, and retrospectives.</div>
+              </div>
+              <div class="timeline-tools">
+                <span class="tool-tag">Java</span><span class="tool-tag">Kotlin</span>
+                <span class="tool-tag">XMPP</span><span class="tool-tag">MVVM</span>
+                <span class="tool-tag">MVP</span><span class="tool-tag">Dagger / Hilt</span>
+                <span class="tool-tag">Coroutines</span><span class="tool-tag">RxJava</span>
+                <span class="tool-tag">Room</span><span class="tool-tag">Firebase</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Wippo -->
+          <div class="timeline-item reveal reveal-delay-4">
+            <div class="timeline-dot">
+              <img src="/assets/img/wippo-logo.png" alt="Wippo"
+                onerror="this.parentElement.innerHTML='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;font-size:20px\'>📱</div>'" />
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-header">
+                <a href="https://www.wippo.md/" target="_blank" class="timeline-company">Wippo</a>
+                <span class="timeline-period">Feb 2019 – Jul 2019 · Chisinau, Moldova</span>
+              </div>
+              <div class="timeline-role">Android Developer</div>
+              <div class="timeline-bullets">
+                <div class="timeline-bullet">Developed and maintained multiple Android applications, adhering to best
+                  practices and coding standards.</div>
+                <div class="timeline-bullet">Collaborated with product managers, designers, and other stakeholders to
+                  gather requirements and translate them into technical specifications.</div>
+                <div class="timeline-bullet">Implemented new features and functionalities, ensuring scalability,
+                  performance, and security.</div>
+                <div class="timeline-bullet">Continuously updated skills and knowledge of industry trends to stay at the
+                  forefront of Android development practices and technologies.</div>
+              </div>
+              <div class="timeline-tools">
+                <span class="tool-tag">Android</span><span class="tool-tag">Java</span>
+                <span class="tool-tag">Audio</span><span class="tool-tag">Google Maps</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TESTIMONIALS ===== -->
+    <section id="testimonials">
+      <div class="section">
+        <div class="section-header reveal">
+          <span class="section-tag">04</span>
+          <h2 class="section-title">Testimonials</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="testimonials-grid">
+          <div class="testimonial-card"><img src="/assets/img/reviews/review 0.png" alt="Review 0"
+              class="responsive-img" /></div>
+          <div class="testimonial-card"><img src="/assets/img/reviews/review 1.png" alt="Review 1"
+              class="responsive-img" /></div>
+          <div class="testimonial-card"><img src="/assets/img/reviews/review 2.png" alt="Review 2"
+              class="responsive-img" /></div>
+          <div class="testimonial-card"><img src="/assets/img/reviews/review 3.png" alt="Review 3"
+              class="responsive-img" /></div>
+          <div class="testimonial-card"><img src="/assets/img/reviews/review 4.png" alt="Review 4"
+              class="responsive-img" /></div>
+          <div class="testimonial-card"><img src="/assets/img/reviews/review 5.png" alt="Review 5"
+              class="responsive-img" /></div>
+          <div class="testimonial-card"><img src="/assets/img/reviews/review 6.png" alt="Review 6"
+              class="responsive-img" /></div>
+          <div class="testimonial-card"><img src="/assets/img/reviews/review 7.png" alt="Review 7"
+              class="responsive-img" /></div>
+          <div class="testimonial-card"><img src="/assets/img/reviews/review 8.png" alt="Review 8"
+              class="responsive-img" /></div>
+          <div class="testimonial-card"><img src="/assets/img/reviews/review 9.png" alt="Review 9"
+              class="responsive-img" /></div>
+          <div class="testimonial-card"><img src="/assets/img/reviews/review 10.png" alt="Review 10"
+              class="responsive-img" /></div>
+          <div class="testimonial-card"><img src="/assets/img/reviews/review 11.png" alt="Review 11"
+              class="responsive-img" /></div>
+          <div class="testimonial-card"><img src="/assets/img/reviews/review 12.png" alt="Review 12"
+              class="responsive-img" /></div>
+          <div class="testimonial-card"><img src="/assets/img/reviews/review 13.png" alt="Review 13"
+              class="responsive-img" /></div>
+          <div class="testimonial-card"><img src="/assets/img/reviews/review 14.png" alt="Review 14"
+              class="responsive-img" /></div>
+          <div class="testimonial-card"><img src="/assets/img/reviews/review 15.png" alt="Review 15"
+              class="responsive-img" /></div>
+          <div class="testimonial-card"><img src="/assets/img/reviews/review 16.png" alt="Review 16"
+              class="responsive-img" /></div>
+          <div class="testimonial-card"><img src="/assets/img/reviews/review 17.png" alt="Review 17"
+              class="responsive-img" /></div>
+          <div class="testimonial-card"><img src="/assets/img/reviews/review 19.png" alt="Review 19"
+              class="responsive-img" /></div>
+          <div class="testimonial-card"><img src="/assets/img/reviews/review 20.png" alt="Review 20"
+              class="responsive-img" /></div>
+          <div class="testimonial-card"><img src="/assets/img/reviews/review 21.png" alt="Review 21"
+              class="responsive-img" /></div>
+          <div class="testimonial-card"><img src="/assets/img/reviews/review 22.png" alt="Review 22"
+              class="responsive-img" /></div>
+          <div class="testimonial-card"><img src="/assets/img/reviews/review 23.png" alt="Review 23"
+              class="responsive-img" /></div>
+          <div class="testimonial-card"><img src="/assets/img/reviews/review 24.png" alt="Review 24"
+              class="responsive-img" /></div>
+          <div class="testimonial-card"><img src="/assets/img/reviews/review 25.png" alt="Review 25"
+              class="responsive-img" /></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section id="projects">
+      <div class="section">
+        <div class="section-header reveal">
+          <span class="section-tag">05</span>
+          <h2 class="section-title">Projects</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="projects-grid">
+
+          <!-- MaterialUIUX -->
+          <div class="project-card reveal">
+            <div class="project-image">
+              <img src="/assets/img/project-materialuiux.png" alt="MaterialUIUX" loading="lazy"
+                onerror="this.src='https://via.placeholder.com/400x250/0d1117/00e5b0?text=MaterialUIUX'" />
+              <div class="project-image-overlay"></div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-name">MaterialUiUx</h3>
+              <p class="project-desc">A marketplace for UI Kits with Android Studio source code. Find premium UI
+                components and templates with full source.</p>
+              <div class="project-tags">
+                <span class="skill-tag">Android</span>
+                <span class="skill-tag">WordPress</span>
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">Kotlin</span>
+                <span class="skill-tag">Android NDK</span>
+              </div>
+              <div class="project-footer">
+                <a href="https://materialuiux.com/" target="_blank" class="project-link">
+                  Visit Site <i class="fa-solid fa-arrow-right"></i>
                 </a>
               </div>
-              <div class="col s12 m10">
-                <p>
-                  <span class="card-title">
-                    <a href="https://materialuiux.com" target="_blank" class="teal-text hoverline">MaterialUIUX</a>
-                  </span>
-                </p>
-              </div>
             </div>
-            <div class="role brown-text text-darken-2">Senior Android Developer & Freelance Consultant</div>
-            <ul>
-              <li>Established a successful freelance career, delivering high-quality solutions to clients worldwide
-                across various platforms, including direct engagements and freelance marketplaces.</li>
-              <li>Built a reputation for excellence through consistent performance and reliability, earning trust from
-                clients across diverse industries.</li>
-              <li>Collaborated with clients to successfully complete projects ranging from mobile application
-                development to troubleshooting and optimization.</li>
-              <li>Provided tailored solutions by leveraging expertise in Java, Kotlin, and other Android technologies,
-                meeting unique client requirements.</li>
-              <li>Maintained clear communication with clients to understand project needs, provide updates, and deliver
-                results that consistently exceeded expectations.</li>
-              <li>Demonstrated flexibility and adaptability by managing multiple project workflows and delivering within
-                scope, on time, and within budget.</li>
-              <li>Continuously enhanced technical skills and stayed updated with the latest trends and best practices in
-                Android and software development.</li>
-
-              <li>
-                <b>Tools & Skills:</b> Java, Kotlin, C++, Wear OS, Jetpack Compose, MQTT, MVVM & MVP Architectures,
-                Dagger and Hilt,
-                Kotlin Coroutines, RxJava, Realm & Room Databases, Firebase, PDF & 3D model rendering, Bluetooth,
-                Camera,
-                Retrofit, Glide, Coil, modularization, Google Maps, IoT, and the Google Play Console.
-              </li>
-            </ul>
           </div>
-          <div class="card-action">
-            <span>Apr 2017 - Present | Remote</span>
-          </div>
-        </div>
 
-
-        <div class="card">
-          <div class="card-content">
-            <div class="row">
-              <div class="col s12 m2">
-                <a href="https://happitech.com" target="_blank">
-                  <img alt="Happitech logo" src="/assets/img/happitech-logo.png" class="responsive-img center-block" />
+          <!-- Rkiez -->
+          <div class="project-card reveal reveal-delay-1">
+            <div class="project-image">
+              <img src="/assets/img/project-rkiez.png" alt="Rkiez" loading="lazy"
+                onerror="this.src='https://via.placeholder.com/400x250/0d1117/00e5b0?text=Rkiez'" />
+              <div class="project-image-overlay"></div>
+            </div>
+            <div class="project-body">
+              <h3 class="project-name">Rkiez</h3>
+              <p class="project-desc">Your Productivity Powerhouse App 🚀 — Focus sessions, tasks, statistics, habit &
+                mood tracking all in one place.</p>
+              <div class="project-tags">
+                <span class="skill-tag">Android</span>
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">Kotlin</span>
+                <span class="skill-tag">Jetpack Compose</span>
+              </div>
+              <div class="project-footer">
+                <a href="https://play.google.com/store/apps/details?id=app.focus.session" target="_blank"
+                  class="project-link">
+                  Play Store <i class="fa-solid fa-arrow-right"></i>
                 </a>
               </div>
-              <div class="col s12 m10">
-                <p>
-                  <span class="card-title">
-                    <a href="https://happitech.com" target="_blank" class="teal-text hoverline">Happitech</a>
-                  </span>
-                </p>
-              </div>
             </div>
-            <div class="role brown-text text-darken-2">Senior Android Developer</div>
-            <ul>
-              <li>Identified and resolved a critical issue in a legacy system, improving data consistency, system
-                reliability, and workflow efficiency through detailed debugging and analysis.</li>
-              <li>Improved the existing Android app by refactoring legacy code, enhancing performance and
-                maintainability.</li>
-              <li>Fixed multiple critical bugs, ensuring a smoother user experience and reducing crash rates.</li>
-              <li>Developed comprehensive documentation to support onboarding, testing, and maintenance processes.</li>
-              <li>Updated the software to ensure compatibility with the latest Android versions and devices.</li>
-              <li>Collaborated effectively with team members, answering technical questions, and providing guidance to
-                improve code quality.</li>
-              <li>Analyzed the existing codebase to identify areas for optimization and implemented improvements.</li>
-              <li>Worked closely with cross-functional teams to deliver updates that aligned with company objectives and
-                user needs.</li>
-              <li>
-                <b>Tools & Skills:</b> Kotlin, Java, Android SDK, C++, Python, Multi-Module Architecture, SDK
-                Development, API Design, Backward Compatibility Management, Versioning, Documentation Creation,
-                Performance Optimization, NDK, MVVM Architecture, Technical Documentation, Agile Development
-              </li>
-            </ul>
           </div>
-          <div class="card-action">
-            <span>May 2024 - Present | Remote</span>
-          </div>
-        </div>
 
-        <div class="card">
-          <div class="card-content">
-            <div class="row">
-              <div class="col s12 m2">
-                <a href="https://www.wrkspot.com/" target="_blank"><img alt="WrkSpot logo"
-                    src="/assets/img/wrkspot-logo.jpeg" class="responsive-img center-block" /></a>
-              </div>
-              <div class="col s12 m10">
-                <p>
-                  <span class="card-title"><a href="https://www.wrkspot.com/" target="_blank"
-                      class="teal-text hoverline">WrkSpot</a></span>
-                </p>
-              </div>
+          <!-- RvewX -->
+          <div class="project-card reveal reveal-delay-2">
+            <div class="project-image">
+              <img src="/assets/img/project-rviewx.png" alt="RvewX" loading="lazy"
+                onerror="this.src='https://via.placeholder.com/400x250/0d1117/00e5b0?text=RvewX'" />
+              <div class="project-image-overlay"></div>
             </div>
-            <div class="role brown-text text-darken-2">Senior Android Developer</div>
-            <ul>
-              <li>Developed and maintained multiple Android applications, adhering to best practices and coding
-                standards.</li>
-              <li>Collaborated with product managers, designers, and other stakeholders to gather requirements and
-                translate them into technical specifications.</li>
-              <li>Implemented new features and functionalities, ensuring scalability, performance, and security.</li>
-              <li>Optimized application performance, reducing load times by 70% and increasing overall user
-                satisfaction.</li>
-              <li>Conducted code reviews and provided constructive feedback to team members, fostering a culture of
-                continuous improvement.</li>
-              <li>Resolved critical issues and bugs in a timely manner, maintaining high levels of reliability and
-                uptime.</li>
-              <li>Assisted in updating applications on Google Play Console, ensuring compliance with platform
-                requirements and smooth deployment processes.</li>
-              <li>Stayed updated with the latest trends and technologies in the Android development ecosystem,
-                incorporating relevant advancements into projects.</li>
-              <li>Actively participated in Agile development methodologies, including sprint planning, daily stand-ups,
-                and retrospectives, to drive continuous improvement and project success.</li>
-              <li>
-                <b>Tools:</b> Java, Kotlin, Wear OS, Jetpack Compose, MQTT, MVVM & MVP Architectures, Dagger and Hilt,
-                Kotlin Coroutines, RxJava, Realm & Room Databases, Firebase, PDF & 3D model rendering, Bluetooth,
-                Camera, Retrofit, Glide, Coil, modularization, Google Maps, IOT, and the Google Play Console.
-              </li>
-            </ul>
-          </div>
-          <div class="card-action">
-            <span>Dec 2021 - Feb 2023 | Remote</span>
-          </div>
-        </div>
-
-
-        <div class="card">
-          <div class="card-content">
-            <div class="row">
-              <div class="col s12 m2">
-                <a href="https://chatwise.co.uk/" target="_blank"><img alt="ChatWise logo"
-                    src="/assets/img/chatwise-logo.png" class="responsive-img center-block" /></a>
+            <div class="project-body">
+              <h3 class="project-name">RvewX</h3>
+              <p class="project-desc">Go-to platform for top influencer, app, and website reviews. Features SEO
+                optimization, SSR, and fast server rendering.</p>
+              <div class="project-tags">
+                <span class="skill-tag">Angular</span>
+                <span class="skill-tag">Angular Universal SSR</span>
+                <span class="skill-tag">Spring Boot</span>
+                <span class="skill-tag">MySQL</span>
+                <span class="skill-tag">GCP</span>
+                <span class="skill-tag">JWT</span>
+                <span class="skill-tag">NGINX</span>
               </div>
-              <div class="col s12 m10">
-                <p>
-                  <span class="card-title"><a href="https://chatwise.co.uk/" target="_blank"
-                      class="teal-text hoverline">ChatWise</a></span>
-                </p>
-              </div>
-            </div>
-            <div class="role brown-text text-darken-2">Senior Android Developer</div>
-            <ul>
-              <li>Played a pivotal role in driving a high-impact project to success, demonstrating exceptional
-                problem-solving skills and technical expertise.</li>
-              <li>Addressed critical bugs and optimized application performance, ensuring a seamless user experience.
-              </li>
-              <li>Integrated advanced features, such as auto-playing video functionality during post scrolls and
-                innovative matching algorithms for randomized user pairings during timed calls.</li>
-              <li>Contributed significantly to enhancing the chat functionality, improving user engagement and
-                satisfaction.</li>
-              <li>Took the initiative to recruit and onboard new team members, fostering a collaborative and
-                growth-oriented work environment.</li>
-              <li>Demonstrated proficiency in Java and Kotlin programming languages, leveraging Android SDK and related
-                tools to develop robust mobile applications.</li>
-              <li>Collaborated closely with cross-functional teams, including product managers, designers, and QA
-                engineers, to gather requirements, define technical specifications, and deliver high-quality solutions
-                on schedule.</li>
-              <li>Conducted thorough code reviews and provided constructive feedback to team members, ensuring adherence
-                to best practices and coding standards.</li>
-              <li>Maintained up-to-date knowledge of emerging trends and technologies in the Android development
-                ecosystem, incorporating relevant advancements into project workflows.</li>
-              <li>Actively participated in Agile development methodologies, including sprint planning, daily stand-ups,
-                and retrospectives, to drive continuous improvement and project success.</li>
-              <li>
-                <b>Tools:</b> Java, Kotlin, XMPP, MVVM & MVP Architectures, Dagger and Hilt, Kotlin Coroutines, RxJava,
-                Room Database, Firebase, and a variety of other advanced technologies.
-              </li>
-            </ul>
-          </div>
-          <div class="card-action">
-            <span>Sep 2020 - May 2022 | Remote</span>
-          </div>
-        </div>
-
-
-        <div class="card">
-          <div class="card-content">
-            <div class="row">
-              <div class="col s12 m2">
-                <a href="https://www.wippo.md/" target="_blank"><img alt="wippo logo" src="/assets/img/wippo-logo.png"
-                    class="responsive-img center-block" /></a>
-              </div>
-              <div class="col s12 m10">
-                <p>
-                  <span class="card-title"><a href="https://www.wippo.md/" target="_blank"
-                      class="teal-text hoverline">wippo</a></span>
-                </p>
-              </div>
-            </div>
-            <div class="role brown-text text-darken-2">Android Developer</div>
-            <ul>
-              <li>Developed and maintained multiple Android applications, adhering to best practices and coding
-                standards.</li>
-              <li>Collaborated with product managers, designers, and other stakeholders to gather requirements and
-                translate them into technical specifications.</li>
-              <li>Implemented new features and functionalities, ensuring scalability, performance, and security.</li>
-              <li>Continuously updated skills and knowledge of industry trends to stay at the forefront of Android
-                development practices and technologies.</li>
-              <li>
-                <b>Tools:</b> Android, Java, Audio, Google Maps.
-              </li>
-            </ul>
-          </div>
-          <div class="card-action">
-            <span>Feb 2019 - Jul 2019 | Chisinau, Moldova</span>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-
-
-    <!-- Section: Testimonials -->
-    <section id="testimonials" class="section scrollspy">
-      <h3 class="page-title white-text teal">Testimonials</h3>
-      <div class="container">
-
-        <!-- reviews 0 -->
-        <div class="card">
-          <img alt="Cignex logo" src="/assets/img/reviews/review 0.png" class="responsive-img center-block" />
-        </div>
-
-        <!-- reviews 11 -->
-        <div class="card">
-          <img alt="Cignex logo" src="/assets/img/reviews/review 1.png" class="responsive-img center-block" />
-        </div>
-
-        <div class="card">
-          <img alt="Cignex logo" src="/assets/img/reviews/review 2.png" class="responsive-img center-block" />
-        </div>
-
-        <div class="card">
-          <img alt="Cignex logo" src="/assets/img/reviews/review 3.png" class="responsive-img center-block" />
-        </div>
-
-        <div class="card">
-          <img alt="Cignex logo" src="/assets/img/reviews/review 4.png" class="responsive-img center-block" />
-        </div>
-
-        <div class="card">
-          <img alt="Cignex logo" src="/assets/img/reviews/review 5.png" class="responsive-img center-block" />
-        </div>
-
-        <div class="card">
-          <img alt="Cignex logo" src="/assets/img/reviews/review 6.png" class="responsive-img center-block" />
-        </div>
-
-        <div class="card">
-          <img alt="Cignex logo" src="/assets/img/reviews/review 7.png" class="responsive-img center-block" />
-        </div>
-
-        <div class="card">
-          <img alt="Cignex logo" src="/assets/img/reviews/review 8.png" class="responsive-img center-block" />
-        </div>
-
-        <div class="card">
-          <img alt="Cignex logo" src="/assets/img/reviews/review 9.png" class="responsive-img center-block" />
-        </div>
-
-        <div class="card">
-          <img alt="Cignex logo" src="/assets/img/reviews/review 10.png" class="responsive-img center-block" />
-        </div>
-
-        <div class="card">
-          <img alt="Cignex logo" src="/assets/img/reviews/review 11.png" class="responsive-img center-block" />
-        </div>
-
-        <div class="card">
-          <img alt="Cignex logo" src="/assets/img/reviews/review 12.png" class="responsive-img center-block" />
-        </div>
-
-        <div class="card">
-          <img alt="Cignex logo" src="/assets/img/reviews/review 13.png" class="responsive-img center-block" />
-        </div>
-
-        <div class="card">
-          <img alt="Cignex logo" src="/assets/img/reviews/review 14.png" class="responsive-img center-block" />
-        </div>
-
-        <div class="card">
-          <img alt="Cignex logo" src="/assets/img/reviews/review 15.png" class="responsive-img center-block" />
-        </div>
-
-        <div class="card">
-          <img alt="Cignex logo" src="/assets/img/reviews/review 16.png" class="responsive-img center-block" />
-        </div>
-
-        <div class="card">
-          <img alt="Cignex logo" src="/assets/img/reviews/review 17.png" class="responsive-img center-block" />
-        </div>
-
-        <div class="card">
-          <img alt="Cignex logo" src="/assets/img/reviews/review 19.png" class="responsive-img center-block" />
-        </div>
-
-        <div class="card">
-          <img alt="Cignex logo" src="/assets/img/reviews/review 20.png" class="responsive-img center-block" />
-        </div>
-
-        <div class="card">
-          <img alt="Cignex logo" src="/assets/img/reviews/review 21.png" class="responsive-img center-block" />
-        </div>
-
-        <div class="card">
-          <img alt="Cignex logo" src="/assets/img/reviews/review 22.png" class="responsive-img center-block" />
-        </div>
-
-        <div class="card">
-          <img alt="Cignex logo" src="/assets/img/reviews/review 23.png" class="responsive-img center-block" />
-        </div>
-
-        <div class="card">
-          <img alt="Cignex logo" src="/assets/img/reviews/review 24.png" class="responsive-img center-block" />
-        </div>
-
-        <div class="card">
-          <img alt="Cignex logo" src="/assets/img/reviews/review 25.png" class="responsive-img center-block" />
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Section: Projects -->
-    <section id="projects" class="section scrollspy">
-      <h3 class="page-title white-text teal">Projects</h3>
-      <div class="container">
-        <div class="row">
-
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="materialuiux" src="/assets/img/project-materialuiux.png" style="height: 100%; width: 100%"
-                  class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">MaterialUiUx<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  MaterialUiUx is a market place for UI KIT. You can find UI KIT with Android studio Source code.
-                </p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title grey-text"><small>Accomplishments</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li><b>Tools:</b> Android, Wordpress, Photoshop, Java, Kotlin, Android SDK, Android Ndk</li>
-                </ul>
-                <div class="card-action">
-                  <a aria-label="Visit " href="https://materialuiux.com/" target="_blank" data-position="top"
-                    data-tooltip="View Online"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-external-link"></i></a>
-                </div>
+              <div class="project-footer">
+                <a href="https://rvewx.com" target="_blank" class="project-link">
+                  Visit Site <i class="fa-solid fa-arrow-right"></i>
+                </a>
               </div>
             </div>
           </div>
 
-
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="materialuiux" src="/assets/img/project-rkiez.png" style="height: 100%; width: 100%"
-                  class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Rkiez<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  Rkiez: Your Productivity Powerhouse App 🚀
-                </p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title grey-text"><small>Accomplishments</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li><b>Tools:</b>Android, Java, Kotlin, Jetpack Compose</li>
-                  <li>Focus Sessions</li>
-                  <li>Tasks</li>
-                  <li>Statistics</li>
-                  <li>Habit and Mood Tracking</li>
-                </ul>
-                <div class="card-action">
-                  <a aria-label="Visit " href="https://play.google.com/store/apps/details?id=app.focus.session"
-                    target="_blank" data-position="top" data-tooltip="View Online"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-external-link"></i></a>
-                </div>
-              </div>
+          <!-- BaghdadMenu -->
+          <div class="project-card reveal reveal-delay-3">
+            <div class="project-image">
+              <img src="/assets/img/project-baghdadmenu.png" alt="BaghdadMenu" loading="lazy"
+                onerror="this.src='https://via.placeholder.com/400x250/0d1117/00e5b0?text=BaghdadMenu'" />
+              <div class="project-image-overlay"></div>
             </div>
-          </div>
-
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="rvewx" src="/assets/img/project-rviewx.png" style="height: 100%; width: 100%"
-                  class="activator" />
+            <div class="project-body">
+              <h3 class="project-name">Baghdad Menu</h3>
+              <p class="project-desc">A smart QR-based digital menu platform for Iraqi restaurants. Enables real-time
+                menu
+                updates, SEO optimization, and a seamless no-app experience for customers.</p>
+              <div class="project-tags">
+                <span class="skill-tag">Laravel</span>
+                <span class="skill-tag">MySQL</span>
+                <span class="skill-tag">QR Code</span>
+                <span class="skill-tag">SEO</span>
+                <span class="skill-tag">PWA</span>
               </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">RvewX<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  RvewX: Your Go-To Platform for Top Influencers, Apps, and Websites 🌐
-                </p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title grey-text"><small>Accomplishments</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                   <li><b>Tools:</b> Angular, Angular Universal (SSR), TypeScript, Spring Boot (Java 17), Spring Security, Node.js, MySQL, Google Cloud Storage, JWT, MapStruct, Lombok, NGINX, Apache, Linux Server, CI/CD pipeline</li>
-                  <li>Influencer Reviews</li>
-                  <li>App Ratings</li>
-                  <li>Website Evaluations</li>
-                  <li>SEO Optimization & Fast Server Rendering</li>
-                  <li>Manual Server Setup & Deployment</li>
-                </ul>
-                <div class="card-action">
-                  <a aria-label="Visit" href="https://rvewx.com" target="_blank" data-position="top"
-                    data-tooltip="View Online"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-external-link"></i></a>
-                </div>
+              <div class="project-footer">
+                <a href="https://baghdadmenu.com/" target="_blank" class="project-link">
+                  Visit Site <i class="fa-solid fa-arrow-right"></i>
+                </a>
               </div>
             </div>
           </div>
@@ -723,262 +743,130 @@
       </div>
     </section>
 
-    <!-- Section: Education -->
-    <section id="education" class="section scrollspy">
-      <h3 class="page-title white-text teal">Education</h3>
-      <div class="container">
-        <div class="row">
+    <!-- ===== EDUCATION ===== -->
+    <section id="education">
+      <div class="section">
+        <div class="section-header reveal">
+          <span class="section-tag">06</span>
+          <h2 class="section-title">Education</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="education-grid">
 
-          <div class="col s12 m6 l6">
-            <div class="card">
-              <div class="card-content">
-                <p>
-                  <span class="card-title"><a href="https://utm.md/" target="_blank"
-                      class="teal-text hoverline">TECHNICAL UNIVERSITY OF MOLDOVA</a></span>
-                </p>
-                <p class="brown-text">Chișinău, Moldova</p>
-                <p>
-                  <b>Degree: </b>Faculty of Electronics and Telecommunications
-                  <br>
-                </p>
-              </div>
-            </div>
+          <div class="edu-card reveal">
+            <div class="edu-institution">Technical University of Moldova</div>
+            <div class="edu-location">📍 Chișinău, Moldova</div>
+            <div class="edu-degree">Faculty of Electronics and Telecommunications</div>
           </div>
 
-          <div class="col s12 m6 l6">
-            <div class="card">
-              <div class="card-content">
-                <p>
-                  <span class="card-title"><a href="https://www.netacad.com/" target="_blank"
-                      class="teal-text hoverline">Cisco Networking Academy </a></span>
-                </p>
-                <p class="brown-text">Chișinău, Moldova</p>
-                <p>
-                  <b>Degree: </b>Associate's degree, Network and System Administration/Administrator
-                  <br>
-                </p>
-                <ul>
-                  <p>
-                  <div class="certification-image">
-                    <img src="/assets/img/certifications/cert0.jpg" alt="Image 12">
-                  </div>
-                  </p>
-                </ul>
-              </div>
-            </div>
+          <div class="edu-card reveal reveal-delay-1">
+            <div class="edu-institution">Cisco Networking Academy</div>
+            <div class="edu-location">📍 Chișinău, Moldova</div>
+            <div class="edu-degree">Associate's Degree — Network and System Administration</div>
+            <img src="/assets/img/certifications/cert0.jpg" alt="Cisco cert" class="edu-cert-img" loading="lazy" />
           </div>
 
-          <div class="col s12 m6 l6">
-            <div class="card">
-              <div class="card-content">
-                <p>
-                  <span class="card-title"><a href="https://www.udemy.com/certificate/UC-HRHR4QTW/" target="_blank"
-                      class="teal-text hoverline">Java 17 Masterclass</a></span>
-                </p>
-                <p class="brown-text">Udemy</p>
-                <ul>
-                  <p>
-                  <div class="certification-image">
-                    <img src="/assets/img/certifications/cert4.jpg" alt="Image 4">
-                  </div>
-                  </p>
-                </ul>
-              </div>
-            </div>
+          <div class="edu-card reveal reveal-delay-2">
+            <div class="edu-institution">Java 17 Masterclass</div>
+            <div class="edu-location">🎓 Udemy</div>
+            <img src="/assets/img/certifications/cert4.jpg" alt="Java 17 cert" class="edu-cert-img" loading="lazy" />
           </div>
 
-
-          <div class="col s12 m6 l6">
-            <div class="card">
-              <div class="card-content">
-                <p>
-                  <span class="card-title"><a
-                      href="https://www.udemy.com/certificate/UC-f07e8637-9aa9-4303-8f2d-ea6cec2b8d6e/" target="_blank"
-                      class="teal-text hoverline">Spring Boot 3, Spring 6 & Hibernate for Beginners</a></span>
-                </p>
-                <p class="brown-text">Udemy</p>
-                <ul>
-                  <p>
-                  <div class="certification-image">
-                    <img src="/assets/img/certifications/cert3.jpg" alt="Image 3">
-                  </div>
-                  </p>
-                </ul>
-              </div>
-            </div>
+          <div class="edu-card reveal reveal-delay-3">
+            <div class="edu-institution">Spring Boot 3, Spring 6 & Hibernate for Beginners</div>
+            <div class="edu-location">🎓 Udemy</div>
+            <img src="/assets/img/certifications/cert3.jpg" alt="Spring Boot cert" class="edu-cert-img"
+              loading="lazy" />
           </div>
 
-
-          <div class="col s12 m6 l6">
-            <div class="card">
-              <div class="card-content">
-                <p>
-                  <span class="card-title"><a
-                      href="https://www.udemy.com/certificate/UC-30ea7ccb-7078-42a8-83fe-fd860730bfb3/" target="_blank"
-                      class="teal-text hoverline">Data Structures and Algorithms: Deep Dive Using Java</a></span>
-                </p>
-                <p class="brown-text">Udemy</p>
-                <ul>
-                  <p>
-                  <div class="certification-image">
-                    <img src="/assets/img/certifications/cert1.jpg" alt="Image 1">
-                  </div>
-                  </p>
-                </ul>
-              </div>
-            </div>
+          <div class="edu-card reveal reveal-delay-1">
+            <div class="edu-institution">Data Structures & Algorithms: Deep Dive Using Java</div>
+            <div class="edu-location">🎓 Udemy</div>
+            <img src="/assets/img/certifications/cert1.jpg" alt="DSA cert" class="edu-cert-img" loading="lazy" />
           </div>
 
-          <div class="col s12 m6 l6">
-            <div class="card">
-              <div class="card-content">
-                <p>
-                  <span class="card-title"><a
-                      href="https://www.udemy.com/certificate/UC-52ea0a6f-bb25-4d00-b2bc-46d8ae7d8416/" target="_blank"
-                      class="teal-text hoverline">Data Structures + Algorithms</a></span>
-                </p>
-                <p class="brown-text">Udemy</p>
-                <ul>
-                  <p>
-                  <div class="certification-image">
-                    <img src="/assets/img/certifications/cert2.jpg" alt="Image 2">
-                  </div>
-                  </p>
-                </ul>
-              </div>
-            </div>
+          <div class="edu-card reveal reveal-delay-2">
+            <div class="edu-institution">Data Structures + Algorithms</div>
+            <div class="edu-location">🎓 Udemy</div>
+            <img src="/assets/img/certifications/cert2.jpg" alt="DS cert" class="edu-cert-img" loading="lazy" />
           </div>
 
-
-          <div class="col s12 m6 l6">
-            <div class="card">
-              <div class="card-content">
-                <p>
-                  <span class="card-title"><a
-                      href="https://www.udemy.com/certificate/UC-2dee3001-3c51-4afd-b962-7c1f02d200bd/" target="_blank"
-                      class="teal-text hoverline">iOS & Swift - The Complete iOS App Development Bootcamp</a></span>
-                </p>
-                <p class="brown-text">Udemy</p>
-                <ul>
-                  <p>
-                  <div class="certification-image">
-                    <img src="/assets/img/certifications/cert5.jpg" alt="Image 5">
-                  </div>
-                  </p>
-                </ul>
-              </div>
-            </div>
+          <div class="edu-card reveal reveal-delay-3">
+            <div class="edu-institution">iOS &amp; Swift — Complete iOS App Development Bootcamp</div>
+            <div class="edu-location">🎓 Udemy</div>
+            <img src="/assets/img/certifications/cert5.jpg" alt="iOS cert" class="edu-cert-img" loading="lazy" />
           </div>
 
-          <div class="col s12 m6 l6">
-            <div class="card">
-              <div class="card-content">
-                <p>
-                  <span class="card-title"><a
-                      href="https://www.udemy.com/certificate/UC-f233c732-2b4e-41f6-9ef2-358426adf995/" target="_blank"
-                      class="teal-text hoverline">Full Stack: Angular and Java Spring Boot E-Commerce Website</a></span>
-                </p>
-                <p class="brown-text">Udemy</p>
-                <ul>
-                  <p>
-                  <div class="certification-image">
-                    <img src="/assets/img/certifications/cert6.jpg" alt="Image 6">
-                  </div>
-                  </p>
-                </ul>
-              </div>
-            </div>
+          <div class="edu-card reveal reveal-delay-4">
+            <div class="edu-institution">Full Stack: Angular and Java Spring Boot E-Commerce</div>
+            <div class="edu-location">🎓 Udemy</div>
+            <img src="/assets/img/certifications/cert6.jpg" alt="Full stack cert" class="edu-cert-img" loading="lazy" />
           </div>
 
-          <div class="col s12 m6 l6">
-            <div class="card">
-              <div class="card-content">
-                <p>
-                  <span class="card-title"><a href="https://www.udemy.com/certificate/UC-HRHR4QTW/" target="_blank"
-                      class="teal-text hoverline">
-                      Deploy Java Spring Apps Online to Amazon Cloud (AWS)</a></span>
-                </p>
-                <p class="brown-text">Udemy - Online</p>
-                <ul>
-                  <p>
-                  <div class="certification-image">
-                    <img src="/assets/img/certifications/cert7.jpg" alt="Image 7">
-                  </div>
-                  </p>
-                </ul>
-              </div>
-            </div>
+          <div class="edu-card reveal reveal-delay-1">
+            <div class="edu-institution">Deploy Java Spring Apps Online to Amazon Cloud (AWS)</div>
+            <div class="edu-location">🎓 Udemy</div>
+            <img src="/assets/img/certifications/cert7.jpg" alt="AWS cert" class="edu-cert-img" loading="lazy" />
           </div>
 
         </div>
-    </section>
-
-    <!-- Section: Contact -->
-    <section id="contact" class="section scrollspy full-height">
-      <h3 class="page-title white-text teal">Contact</h3>
-      <div class="container">
-        <p>
-          <a aria-label="Email Mohammed" href="mailto:alsudanimohammed1@gmail.com" target="_blank" data-position="top"
-            data-tooltip="Email Mohammed"
-            class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-              class="fa fa-envelope"></i><a aria-label="Email Mohammed" href="mailto:alsudanimohammed1@gmail.com"
-              class="hoverline">alsudanimohammed0@gmail.com</a></a>
-        </p>
-        <p>
-          <a aria-label="View Mohammed on GitHub" href="https://github.com/MohammedAlsudani/" target="_blank"
-            data-position="top" data-tooltip="View Mohammed on GitHub"
-            class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i class="fa fa-github"></i><a
-              aria-label="Mohammed on Github" href="https://github.com/MohammedAlsudani/" class="hoverline"
-              target="_blank">github.com/MohammedAlsudani</a></a>
-        </p>
-        <p>
-          <a aria-label="View Mohammed on LinkedIn" href="https://www.linkedin.com/in/mohammed-alsudani-259a28152/"
-            target="_blank" data-position="top" data-tooltip="View Mohammed on LinkedIn"
-            class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-              class="fa fa-linkedin"></i><a aria-label="Mohammed on LinkedIn"
-              href="https://www.linkedin.com/in/mohammed-alsudani-259a28152/" class="hoverline"
-              target="_blank">linkedin.com/in/mohammed-alsudani-259a28152</a></a>
-        </p>
       </div>
     </section>
 
+    <!-- ===== CONTACT ===== -->
+    <section id="contact">
+      <div class="section">
+        <div class="section-header reveal">
+          <span class="section-tag">07</span>
+          <h2 class="section-title">Get In Touch</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="contact-wrapper">
+          <div class="reveal">
+            <h3 class="contact-heading">Let's build something <span>great together.</span></h3>
+            <p class="contact-subtext">I'm always open to discussing new projects, creative ideas, or opportunities to
+              be part of your vision. Feel free to reach out!</p>
+          </div>
+          <div class="contact-links reveal reveal-delay-1">
+            <a href="mailto:alsudanimohammed1@gmail.com" class="contact-link">
+              <div class="contact-link-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div class="contact-link-info">
+                <h4>Email</h4>
+                <p>alsudanimohammed0@gmail.com</p>
+              </div>
+            </a>
+            <a href="https://github.com/MohammedAlsudani/" target="_blank" class="contact-link">
+              <div class="contact-link-icon"><i class="fa-brands fa-github"></i></div>
+              <div class="contact-link-info">
+                <h4>GitHub</h4>
+                <p>github.com/MohammedAlsudani</p>
+              </div>
+            </a>
+            <a href="https://www.linkedin.com/in/mohammeddev1995/" target="_blank" class="contact-link">
+              <div class="contact-link-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+              <div class="contact-link-info">
+                <h4>LinkedIn</h4>
+                <p>linkedin.com/in/mohammeddev1995</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  </main>
+  </div><!-- end main-content -->
 
-  <!-- typed.js -->
-  <script src="assets/vendor/typed.js/typed.min.js"></script>
-  <script type="text/javascript">
-    var typed = new Typed('.typing', {
-      strings: [
-        "Android Developer | Java/C++/Kotlin | Jetpack Compose, XML | Wear OS, Android TV",
-        "Full Stack Developer | Java/Kotlin | Spring Framework | Angular",
-        "IOS Developer (Swift)",
-        "Kotlin Multiplatform Developer",
-        "React Native Developer"
-      ],
-      loop: true,
-      typeSpeed: 80,
-      backSpeed: 40
-    });
-  </script>
+  <footer>
+    <div class="footer-text">© 2025 <span>Mohammed Alsudani</span>. Crafted with ❤️</div>
+    <div class="footer-text">Built with HTML · CSS · JS</div>
+  </footer>
 
-  <!-- jQuery-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <div class="lightbox-overlay" id="lightbox">
+    <button class="lightbox-close" id="lightbox-close">✕</button>
+    <img class="lightbox-img" id="lightbox-img" src="" alt="" />
+  </div>
 
-  <!-- Materialize - Compiled and minified JavaScript-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
-  <script>
-    // Materialize - Initializers
-    $(document).ready(function () {
-      $(".scrollspy").scrollSpy()
-      // Initialize collapse button
-      $(".button-collapse").sideNav({
-        menuWidth: 190, // Default is 240
-        edge: "left", // Choose the horizontal origin
-        closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
-      })
-    })
-  </script>
+  <script src="/assets/js/main.js"></script>
 
 </body>
 
