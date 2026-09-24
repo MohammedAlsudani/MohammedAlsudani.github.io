@@ -1554,3 +1554,39 @@
      left: 20px;
    }
  }
+
+ /* Hide the page only while the Arabic strings are loading (prevents an English flash) */
+html.i18n-loading body { visibility: hidden; }
+
+/* Language button: styled like the theme toggle (i18n.js copies its look and sits it right below) */
+.lang-switch {
+  position: fixed; top: 64px; right: 20px; z-index: 1001;
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 34px; height: 34px; padding: 0; cursor: pointer; border-radius: 50%;
+  border: 1px solid rgba(0, 229, 176, .4); background: rgba(13, 17, 23, .8); color: #00e5b0;
+  font: 700 11px/1 'Plus Jakarta Sans', sans-serif; letter-spacing: 0 !important;
+  transition: background-color .2s, color .2s, transform .2s;
+}
+.lang-switch:hover { transform: scale(1.08); }
+
+/* ---------- RTL / Arabic ---------- */
+html[dir="rtl"] body,
+html[dir="rtl"] *:not(i):not(code):not(pre) {
+  font-family: 'Cairo', 'Plus Jakarta Sans', sans-serif;
+  letter-spacing: 0 !important;
+}
+html[dir="rtl"] .contact-link-info p,
+html[dir="rtl"] .timeline-period { direction: ltr; unicode-bidi: plaintext; text-align: right; }
+html[dir="rtl"] .project-link i { display: inline-block; transform: scaleX(-1); }
+
+/* Sidebar on the right (open state uses the .open class from main.js) */
+html[dir="rtl"] .sidebar { left: auto !important; right: 0 !important; }
+@media (max-width: 900px) {
+  html[dir="rtl"] .sidebar { transform: translateX(100%); }
+  html[dir="rtl"] .sidebar.open { transform: translateX(0); }
+}
+
+/* Desktop RTL: the sidebar is on the right, so the theme toggle (and the language button under it) go to the left */
+@media (min-width: 901px) {
+  html[dir="rtl"] #theme-toggle { right: auto !important; left: 20px !important; }
+}

@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -12,9 +12,24 @@
     href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- i18n: resolve language before first paint (no layout flash) -->
+  <script>
+    (function () {
+      try {
+        var q = new URLSearchParams(location.search).get('lang');
+        var l = q || localStorage.getItem('lang') || ((navigator.language || '').toLowerCase().indexOf('ar') === 0 ? 'ar' : 'en');
+        if (l !== 'ar' && l !== 'en') l = 'en';
+        var d = document.documentElement;
+        d.lang = l; d.dir = l === 'ar' ? 'rtl' : 'ltr';
+        if (l === 'ar') d.classList.add('i18n-loading');
+        window.__LANG = l;
+      } catch (e) { window.__LANG = 'en'; }
+    })();
+  </script>
   <!-- Custom Styles-->
   <link rel="stylesheet" href="/assets/css/style.css" />
-  <title>Mohammed Alsudani | Software Developer</title>
+  <link rel="stylesheet" href="/assets/css/i18n.css" />
+  <title data-i18n="meta.title">Mohammed Alsudani | Software Developer</title>
 
   <!-- Open Graph-->
   <meta property="og:locale" content="en_US" />
@@ -26,7 +41,7 @@
   <meta property="article:publisher" content="https://mohammedalsudani.github.io/" />
 
   <meta name="author" content="Mohammed Alsudani" />
-  <meta name="description"
+  <meta name="description" data-i18n-attr="content:meta.description"
     content="Enthusiastic Software Developer, eager to learn new things and provide the community with what I already have." />
   <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/favicon/apple-icon-57x57.png" />
   <link rel="apple-touch-icon" sizes="60x60" href="/assets/img/favicon/apple-icon-60x60.png" />
@@ -68,11 +83,14 @@
 
 <body>
 
+  <!-- Language Switch -->
+  <button id="lang-toggle" class="lang-switch" type="button" data-i18n="lang.switch">العربية</button>
+
   <!-- Theme Toggle -->
-  <button id="theme-toggle" aria-label="Toggle theme">☀️</button>
+  <button id="theme-toggle" aria-label="Toggle theme" data-i18n-attr="aria-label:aria.theme">☀️</button>
 
   <!-- Mobile Hamburger -->
-  <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+  <button class="hamburger" id="hamburger" aria-label="Toggle navigation" data-i18n-attr="aria-label:aria.menu">
     <span></span><span></span><span></span>
   </button>
 
@@ -82,20 +100,20 @@
   <!-- Sidebar Navigation -->
   <nav class="sidebar" id="sidebar">
     <div class="sidebar-profile">
-      <img src="/assets/img/profile-img.jpg" class="sidebar-avatar" alt="Mohammed Alsudani"
+      <img src="/assets/img/profile-img.jpg" class="sidebar-avatar" alt="Mohammed Alsudani" data-i18n-attr="alt:alt.avatar"
         onerror="this.src='https://ui-avatars.com/api/?name=Mohammed+Alsudani&size=80&background=00e5b0&color=080c10&bold=true'" />
-      <div class="sidebar-name">Mohammed Alsudani</div>
-      <div class="sidebar-title">Software Developer</div>
+      <div class="sidebar-name" data-i18n="sidebar.mohammed_alsudani">Mohammed Alsudani</div>
+      <div class="sidebar-title" data-i18n="sidebar.software_developer">Software Developer</div>
     </div>
     <ul class="nav-links">
-      <li><a href="#intro" class="nav-link active"><i class="fa-solid fa-house"></i> Home</a></li>
-      <li><a href="#about" class="nav-link"><i class="fa-solid fa-user"></i> About</a></li>
-      <li><a href="#video-intro" class="nav-link"><i class="fa-solid fa-circle-play"></i> Video</a></li>
-      <li><a href="#experience" class="nav-link"><i class="fa-solid fa-briefcase"></i> Experience</a></li>
-      <li><a href="#testimonials" class="nav-link"><i class="fa-solid fa-star"></i> Testimonials</a></li>
-      <li><a href="#projects" class="nav-link"><i class="fa-solid fa-code"></i> Projects</a></li>
-      <li><a href="#education" class="nav-link"><i class="fa-solid fa-graduation-cap"></i> Education</a></li>
-      <li><a href="#contact" class="nav-link"><i class="fa-solid fa-envelope"></i> Contact</a></li>
+      <li><a href="#intro" class="nav-link active"><i class="fa-solid fa-house"></i> <span data-i18n="nav.home">Home</span></a></li>
+      <li><a href="#about" class="nav-link"><i class="fa-solid fa-user"></i> <span data-i18n="nav.about">About</span></a></li>
+      <li><a href="#video-intro" class="nav-link"><i class="fa-solid fa-circle-play"></i> <span data-i18n="nav.video">Video</span></a></li>
+      <li><a href="#experience" class="nav-link"><i class="fa-solid fa-briefcase"></i> <span data-i18n="nav.experience">Experience</span></a></li>
+      <li><a href="#testimonials" class="nav-link"><i class="fa-solid fa-star"></i> <span data-i18n="testimonials.testimonials">Testimonials</span></a></li>
+      <li><a href="#projects" class="nav-link"><i class="fa-solid fa-code"></i> <span data-i18n="projects.projects">Projects</span></a></li>
+      <li><a href="#education" class="nav-link"><i class="fa-solid fa-graduation-cap"></i> <span data-i18n="education.education">Education</span></a></li>
+      <li><a href="#contact" class="nav-link"><i class="fa-solid fa-envelope"></i> <span data-i18n="nav.contact">Contact</span></a></li>
     </ul>
     <div class="sidebar-socials">
       <a href="https://www.linkedin.com/in/mohammeddev1995/" target="_blank" aria-label="LinkedIn">
@@ -104,7 +122,7 @@
       <a href="https://github.com/MohammedAlsudani/" target="_blank" aria-label="GitHub">
         <i class="fa-brands fa-github"></i>
       </a>
-      <a href="mailto:alsudanimohammed1@gmail.com" aria-label="Email">
+      <a href="mailto:alsudanimohammed1@gmail.com" aria-label="Email" data-i18n-attr="aria-label:aria.email">
         <i class="fa-solid fa-envelope"></i>
       </a>
     </div>
@@ -124,43 +142,43 @@
       <div class="hero-content">
         <div class="hero-badge">
           <span class="hero-badge-dot"></span>
-          Available for new opportunities
+          <span data-i18n="hero.badge">Available for new opportunities</span>
         </div>
-        <h1 class="hero-heading">
+        <h1 class="hero-heading" data-i18n-html="hero.hi_i_m_mohammed_alsudani">
           Hi, I'm<br>
           <span class="name">Mohammed Alsudani.</span>
         </h1>
         <div class="hero-typing-line" id="typing-text">Android Developer</div>
-        <p class="hero-description">
+        <p class="hero-description" data-i18n="hero.self_driven_quick_starter_passionate">
           Self-driven, quick starter, passionate programmer with a curious mind who enjoys solving complex and
           challenging real-world problems. 9+ years building exceptional software.
         </p>
         <div class="hero-cta">
-          <a href="#contact" class="btn-primary">Get In Touch</a>
-          <a href="#about" class="btn-outline">View My Work</a>
+          <a href="#contact" class="btn-primary" data-i18n="hero.get_in_touch">Get In Touch</a>
+          <a href="#about" class="btn-outline" data-i18n="hero.view_my_work">View My Work</a>
         </div>
         <div class="hero-stats">
           <div class="hero-stat-item">
             <div class="hero-stat-num">9+</div>
-            <div class="hero-stat-label">Years Exp.</div>
+            <div class="hero-stat-label" data-i18n="hero.years_exp">Years Exp.</div>
           </div>
           <div class="hero-stat-item">
             <div class="hero-stat-num">5</div>
-            <div class="hero-stat-label">Companies</div>
+            <div class="hero-stat-label" data-i18n="hero.companies">Companies</div>
           </div>
           <div class="hero-stat-item">
             <div class="hero-stat-num">25+</div>
-            <div class="hero-stat-label">Reviews</div>
+            <div class="hero-stat-label" data-i18n="hero.reviews">Reviews</div>
           </div>
           <div class="hero-stat-item">
             <div class="hero-stat-num">∞</div>
-            <div class="hero-stat-label">Curiosity</div>
+            <div class="hero-stat-label" data-i18n="hero.curiosity">Curiosity</div>
           </div>
         </div>
       </div>
       <div class="scroll-indicator">
         <div class="scroll-indicator-line"></div>
-        <span>scroll</span>
+        <span data-i18n="hero.scroll">scroll</span>
       </div>
     </section>
 
@@ -169,29 +187,29 @@
       <div class="section">
         <div class="section-header reveal">
           <span class="section-tag">01</span>
-          <h2 class="section-title">About Me</h2>
+          <h2 class="section-title" data-i18n="about.about_me">About Me</h2>
           <div class="section-line"></div>
         </div>
         <div class="about-grid">
           <div class="about-text reveal reveal-delay-1">
 
-            <p>As an adept Software Developer with over <strong>9 years of expertise</strong>, I specialize in Mobile
+            <p data-i18n-html="about.as_an_adept_software_developer">As an adept Software Developer with over <strong>9 years of expertise</strong>, I specialize in Mobile
               App development, full-stack development, and <strong>AI/ML integration</strong>. I enjoy problem-solving
               and coding, always striving to bring 100% to the work I do.</p>
-            <p>Passionate about developing complex applications that solve real-world problems impacting millions of
+            <p data-i18n="about.passionate_about_developing_complex_applic">Passionate about developing complex applications that solve real-world problems impacting millions of
               users, I love being a team member — it's a great opportunity to share experiences and meet wonderful
               people. ^_^</p>
-            <p>Currently expanding into <strong>Machine Learning</strong> — training models, integrating local AI models
+            <p data-i18n-html="about.currently_expanding_into_machine_learning">Currently expanding into <strong data-i18n="about.machine_learning">Machine Learning</strong> — training models, integrating local AI models
               into mobile and web apps, and connecting LLM APIs (OpenAI, Gemini, and more). Also exploring
               <strong>AR/VR</strong> development with ARCore and ARKit to build immersive experiences.
             </p>
-            <p>Looking for an opportunity to work in a challenging position combining my skills in Software Engineering,
+            <p data-i18n="about.looking_for_an_opportunity_to">Looking for an opportunity to work in a challenging position combining my skills in Software Engineering,
               which provides professional development, interesting experiences and personal growth.</p>
 
           </div>
           <div class="skills-grid reveal reveal-delay-2">
             <div class="skill-category">
-              <div class="skill-cat-label">Languages</div>
+              <div class="skill-cat-label" data-i18n="about.languages">Languages</div>
               <div class="skill-tags">
                 <span class="skill-tag">Java</span><span class="skill-tag">Kotlin</span>
                 <span class="skill-tag">Swift</span><span class="skill-tag">TypeScript</span>
@@ -201,16 +219,16 @@
               </div>
             </div>
             <div class="skill-category">
-              <div class="skill-cat-label">Mobile</div>
+              <div class="skill-cat-label" data-i18n="about.mobile">Mobile</div>
               <div class="skill-tags">
-                <span class="skill-tag">Native Android</span><span class="skill-tag">Native iOS</span>
+                <span class="skill-tag" data-i18n="about.native_android">Native Android</span><span class="skill-tag" data-i18n="about.native_ios">Native iOS</span>
                 <span class="skill-tag">Jetpack Compose</span><span class="skill-tag">SwiftUI</span>
                 <span class="skill-tag">KMM</span><span class="skill-tag">React Native</span>
                 <span class="skill-tag">Wear OS</span><span class="skill-tag">Android TV</span>
                 <span class="skill-tag">Android Auto</span><span class="skill-tag">Android Widgets</span>
                 <span class="skill-tag">XML</span>
                 <span class="skill-tag">Xcode Storyboard</span>
-                <span class="skill-tag">App Security</span>
+                <span class="skill-tag" data-i18n="about.app_security">App Security</span>
                 <span class="skill-tag">ARCore</span>
                 <span class="skill-tag">ARKit</span>
                 <span class="skill-tag">SceneKit</span>
@@ -220,7 +238,7 @@
               </div>
             </div>
             <div class="skill-category">
-              <div class="skill-cat-label">Backend & Web</div>
+              <div class="skill-cat-label" data-i18n="about.backend_web">Backend & Web</div>
               <div class="skill-tags">
                 <span class="skill-tag">Spring Boot</span><span class="skill-tag">Spring MVC</span>
                 <span class="skill-tag">Angular</span><span class="skill-tag">JavaFX</span>
@@ -233,16 +251,16 @@
             </div>
             <!-- Add after Architecture & Patterns category -->
             <div class="skill-category">
-              <div class="skill-cat-label">AI & Machine Learning</div>
+              <div class="skill-cat-label" data-i18n="about.ai_machine_learning">AI & Machine Learning</div>
               <div class="skill-tags">
-                <span class="skill-tag">Machine Learning</span>
-                <span class="skill-tag">Model Training</span>
+                <span class="skill-tag" data-i18n="about.machine_learning">Machine Learning</span>
+                <span class="skill-tag" data-i18n="about.model_training">Model Training</span>
                 <span class="skill-tag">TensorFlow</span>
                 <span class="skill-tag">PyTorch</span>
                 <span class="skill-tag">scikit-learn</span>
-                <span class="skill-tag">Local Model Integration</span>
-                <span class="skill-tag">On-Device ML</span>
-                <span class="skill-tag">LLM API Integration</span>
+                <span class="skill-tag" data-i18n="about.local_model_integration">Local Model Integration</span>
+                <span class="skill-tag" data-i18n="about.on_device_ml">On-Device ML</span>
+                <span class="skill-tag" data-i18n="about.llm_api_integration">LLM API Integration</span>
                 <span class="skill-tag">OpenAI API</span>
                 <span class="skill-tag">Gemini API</span>
                 <span class="skill-tag">TensorFlow Lite</span>
@@ -251,7 +269,7 @@
               </div>
             </div>
             <div class="skill-category">
-              <div class="skill-cat-label">Networking & Real-time</div>
+              <div class="skill-cat-label" data-i18n="about.networking_real_time">Networking & Real-time</div>
               <div class="skill-tags">
                 <span class="skill-tag">Retrofit</span><span class="skill-tag">OkHttp3</span>
                 <span class="skill-tag">Ktor</span><span class="skill-tag">Volley</span>
@@ -261,7 +279,7 @@
               </div>
             </div>
             <div class="skill-category">
-              <div class="skill-cat-label">Cloud, Tools & DevOps</div>
+              <div class="skill-cat-label" data-i18n="about.cloud_tools_devops">Cloud, Tools & DevOps</div>
               <div class="skill-tags">
                 <span class="skill-tag">Firebase</span><span class="skill-tag">AWS</span>
                 <span class="skill-tag">GCP</span><span class="skill-tag">Oracle Cloud</span>
@@ -272,37 +290,37 @@
               </div>
             </div>
             <div class="skill-category">
-              <div class="skill-cat-label">Architecture & Patterns</div>
+              <div class="skill-cat-label" data-i18n="about.architecture_patterns">Architecture & Patterns</div>
               <div class="skill-tags">
                 <span class="skill-tag">MVVM</span><span class="skill-tag">MVP</span>
-                <span class="skill-tag">MVC</span><span class="skill-tag">Clean Architecture</span>
+                <span class="skill-tag">MVC</span><span class="skill-tag" data-i18n="about.clean_architecture">Clean Architecture</span>
                 <span class="skill-tag">Dagger / Hilt</span><span class="skill-tag">RxJava</span>
-                <span class="skill-tag">Coroutines</span><span class="skill-tag">OOP Patterns</span>
+                <span class="skill-tag">Coroutines</span><span class="skill-tag" data-i18n="about.oop_patterns">OOP Patterns</span>
                 <span class="skill-tag">Delegate (Swift)</span>
               </div>
             </div>
             <div class="skill-category">
-              <div class="skill-cat-label">Device & Rendering</div>
+              <div class="skill-cat-label" data-i18n="about.device_rendering">Device & Rendering</div>
               <div class="skill-tags">
-                <span class="skill-tag">Bluetooth</span><span class="skill-tag">GPS</span>
-                <span class="skill-tag">Camera</span><span class="skill-tag">Accelerometer</span>
+                <span class="skill-tag" data-i18n="about.bluetooth">Bluetooth</span><span class="skill-tag">GPS</span>
+                <span class="skill-tag" data-i18n="about.camera">Camera</span><span class="skill-tag" data-i18n="about.accelerometer">Accelerometer</span>
                 <span class="skill-tag">Google Maps</span><span class="skill-tag">MapBox</span>
-                <span class="skill-tag">OpenStreetMap</span><span class="skill-tag">PDF Rendering</span>
-                <span class="skill-tag">3D Model Rendering</span>
+                <span class="skill-tag">OpenStreetMap</span><span class="skill-tag" data-i18n="about.pdf_rendering">PDF Rendering</span>
+                <span class="skill-tag" data-i18n="about.3d_model_rendering">3D Model Rendering</span>
               </div>
             </div>
             <div class="skill-category">
-              <div class="skill-cat-label">Testing & Distribution</div>
+              <div class="skill-cat-label" data-i18n="about.testing_distribution">Testing & Distribution</div>
               <div class="skill-tags">
-                <span class="skill-tag">Unit Testing</span><span class="skill-tag">Espresso</span>
+                <span class="skill-tag" data-i18n="about.unit_testing">Unit Testing</span><span class="skill-tag">Espresso</span>
                 <span class="skill-tag">Firebase Test Lab</span>
                 <span class="skill-tag">Google Play Store</span><span class="skill-tag">Apple App Store</span>
-                <span class="skill-tag">In-App Purchase</span><span class="skill-tag">Stripe</span>
+                <span class="skill-tag" data-i18n="about.in_app_purchase">In-App Purchase</span><span class="skill-tag">Stripe</span>
                 <span class="skill-tag">Google Play Billing Library</span>
               </div>
             </div>
             <div class="skill-category">
-              <div class="skill-cat-label">Social Media Integration</div>
+              <div class="skill-cat-label" data-i18n="about.social_media_integration">Social Media Integration</div>
               <div class="skill-tags">
                 <span class="skill-tag">Facebook</span>
                 <span class="skill-tag">Twitter</span>
@@ -319,7 +337,7 @@
       <div class="section">
         <div class="section-header reveal">
           <span class="section-tag">02</span>
-          <h2 class="section-title">Meet Mohammed</h2>
+          <h2 class="section-title" data-i18n="video.meet_mohammed">Meet Mohammed</h2>
           <div class="section-line"></div>
         </div>
         <div class="video-wrapper reveal reveal-delay-1">
@@ -329,23 +347,23 @@
         </div>
         <div class="video-meta">
           <div class="video-meta-item reveal reveal-delay-2">
-            <h5>What You'll Learn</h5>
+            <h5 data-i18n="video.what_you_ll_learn">What You'll Learn</h5>
             <ul>
-              <li>My 9+ years journey in software development</li>
-              <li>Key projects and technical accomplishments</li>
-              <li>My approach to solving complex problems</li>
-              <li>Technologies and tools I'm passionate about</li>
-              <li>What drives me as a developer</li>
+              <li data-i18n="video.my_9_years_journey_in">My 9+ years journey in software development</li>
+              <li data-i18n="video.key_projects_and_technical_accomplishments">Key projects and technical accomplishments</li>
+              <li data-i18n="video.my_approach_to_solving_complex">My approach to solving complex problems</li>
+              <li data-i18n="video.technologies_and_tools_i_m">Technologies and tools I'm passionate about</li>
+              <li data-i18n="video.what_drives_me_as_a">What drives me as a developer</li>
             </ul>
           </div>
           <div class="video-meta-item reveal reveal-delay-3">
-            <h5>Why Work Together</h5>
+            <h5 data-i18n="video.why_work_together">Why Work Together</h5>
             <ul>
-              <li>Proven track record across 5 companies</li>
-              <li>25+ verified client reviews</li>
-              <li>How I deliver exceptional, on-time results</li>
-              <li>Passionate about solving real-world problems</li>
-              <li>Strong team collaborator and communicator</li>
+              <li data-i18n="video.proven_track_record_across_5">Proven track record across 5 companies</li>
+              <li data-i18n="video.25_verified_client_reviews">25+ verified client reviews</li>
+              <li data-i18n="video.how_i_deliver_exceptional_on">How I deliver exceptional, on-time results</li>
+              <li data-i18n="video.passionate_about_solving_real_world">Passionate about solving real-world problems</li>
+              <li data-i18n="video.strong_team_collaborator_and_communicator">Strong team collaborator and communicator</li>
             </ul>
           </div>
         </div>
@@ -357,7 +375,7 @@
       <div class="section">
         <div class="section-header reveal">
           <span class="section-tag">03</span>
-          <h2 class="section-title">Experience</h2>
+          <h2 class="section-title" data-i18n="experience.experience">Experience</h2>
           <div class="section-line"></div>
         </div>
         <div class="timeline">
@@ -371,24 +389,24 @@
             <div class="timeline-card">
               <div class="timeline-header">
                 <a href="https://materialuiux.com" target="_blank" class="timeline-company">MaterialUIUX</a>
-                <span class="timeline-period">Apr 2017 – Present · Remote</span>
+                <span class="timeline-period" data-i18n="experience.apr_2017_present_remote">Apr 2017 – Present · Remote</span>
               </div>
-              <div class="timeline-role">Senior Android Developer & Freelance Consultant</div>
+              <div class="timeline-role" data-i18n="experience.senior_android_developer_freelance_consult">Senior Android Developer & Freelance Consultant</div>
               <div class="timeline-bullets">
-                <div class="timeline-bullet">Established a successful freelance career, delivering high-quality
+                <div class="timeline-bullet" data-i18n="experience.established_a_successful_freelance_career">Established a successful freelance career, delivering high-quality
                   solutions to clients worldwide across various platforms, including direct engagements and freelance
                   marketplaces.</div>
-                <div class="timeline-bullet">Built a reputation for excellence through consistent performance and
+                <div class="timeline-bullet" data-i18n="experience.built_a_reputation_for_excellence">Built a reputation for excellence through consistent performance and
                   reliability, earning trust from clients across diverse industries.</div>
-                <div class="timeline-bullet">Collaborated with clients to successfully complete projects ranging from
+                <div class="timeline-bullet" data-i18n="experience.collaborated_with_clients_to_successfully">Collaborated with clients to successfully complete projects ranging from
                   mobile application development to troubleshooting and optimization.</div>
-                <div class="timeline-bullet">Provided tailored solutions by leveraging expertise in Java, Kotlin, and
+                <div class="timeline-bullet" data-i18n="experience.provided_tailored_solutions_by_leveraging">Provided tailored solutions by leveraging expertise in Java, Kotlin, and
                   other Android technologies, meeting unique client requirements.</div>
-                <div class="timeline-bullet">Maintained clear communication with clients to understand project needs,
+                <div class="timeline-bullet" data-i18n="experience.maintained_clear_communication_with_client">Maintained clear communication with clients to understand project needs,
                   provide updates, and deliver results that consistently exceeded expectations.</div>
-                <div class="timeline-bullet">Demonstrated flexibility and adaptability by managing multiple project
+                <div class="timeline-bullet" data-i18n="experience.demonstrated_flexibility_and_adaptability_">Demonstrated flexibility and adaptability by managing multiple project
                   workflows and delivering within scope, on time, and within budget.</div>
-                <div class="timeline-bullet">Continuously enhanced technical skills and stayed updated with the latest
+                <div class="timeline-bullet" data-i18n="experience.continuously_enhanced_technical_skills_and">Continuously enhanced technical skills and stayed updated with the latest
                   trends and best practices in Android and software development.</div>
               </div>
               <div class="timeline-tools">
@@ -397,8 +415,8 @@
                 <span class="tool-tag">MQTT</span><span class="tool-tag">IoT</span><span
                   class="tool-tag">Firebase</span>
                 <span class="tool-tag">Realm</span><span class="tool-tag">Room</span><span
-                  class="tool-tag">Bluetooth</span>
-                <span class="tool-tag">PDF & 3D Rendering</span><span class="tool-tag">Google Maps</span>
+                  class="tool-tag" data-i18n="about.bluetooth">Bluetooth</span>
+                <span class="tool-tag" data-i18n="experience.pdf_3d_rendering">PDF & 3D Rendering</span><span class="tool-tag">Google Maps</span>
               </div>
             </div>
           </div>
@@ -412,33 +430,33 @@
             <div class="timeline-card">
               <div class="timeline-header">
                 <a href="https://happitech.com" target="_blank" class="timeline-company">Happitech</a>
-                <span class="timeline-period">May 2024 – july 2025 · Remote</span>
+                <span class="timeline-period" data-i18n="experience.may_2024_july_2025_remote">May 2024 – july 2025 · Remote</span>
               </div>
-              <div class="timeline-role">Senior Android Developer</div>
+              <div class="timeline-role" data-i18n="experience.senior_android_developer">Senior Android Developer</div>
               <div class="timeline-bullets">
-                <div class="timeline-bullet">Identified and resolved a critical issue in a legacy system, improving data
+                <div class="timeline-bullet" data-i18n="experience.identified_and_resolved_a_critical">Identified and resolved a critical issue in a legacy system, improving data
                   consistency, system reliability, and workflow efficiency through detailed debugging and analysis.
                 </div>
-                <div class="timeline-bullet">Improved the existing Android app by refactoring legacy code, enhancing
+                <div class="timeline-bullet" data-i18n="experience.improved_the_existing_android_app">Improved the existing Android app by refactoring legacy code, enhancing
                   performance and maintainability.</div>
-                <div class="timeline-bullet">Fixed multiple critical bugs, ensuring a smoother user experience and
+                <div class="timeline-bullet" data-i18n="experience.fixed_multiple_critical_bugs_ensuring">Fixed multiple critical bugs, ensuring a smoother user experience and
                   reducing crash rates.</div>
-                <div class="timeline-bullet">Developed comprehensive documentation to support onboarding, testing, and
+                <div class="timeline-bullet" data-i18n="experience.developed_comprehensive_documentation_to_s">Developed comprehensive documentation to support onboarding, testing, and
                   maintenance processes.</div>
-                <div class="timeline-bullet">Updated the software to ensure compatibility with the latest Android
+                <div class="timeline-bullet" data-i18n="experience.updated_the_software_to_ensure">Updated the software to ensure compatibility with the latest Android
                   versions and devices.</div>
-                <div class="timeline-bullet">Collaborated effectively with team members, answering technical questions
+                <div class="timeline-bullet" data-i18n="experience.collaborated_effectively_with_team_members">Collaborated effectively with team members, answering technical questions
                   and providing guidance to improve code quality.</div>
-                <div class="timeline-bullet">Analyzed the existing codebase to identify areas for optimization and
+                <div class="timeline-bullet" data-i18n="experience.analyzed_the_existing_codebase_to">Analyzed the existing codebase to identify areas for optimization and
                   implemented improvements.</div>
-                <div class="timeline-bullet">Worked closely with cross-functional teams to deliver updates that aligned
+                <div class="timeline-bullet" data-i18n="experience.worked_closely_with_cross_functional">Worked closely with cross-functional teams to deliver updates that aligned
                   with company objectives and user needs.</div>
               </div>
               <div class="timeline-tools">
                 <span class="tool-tag">Kotlin</span><span class="tool-tag">Java</span><span class="tool-tag">C++</span>
                 <span class="tool-tag">Python</span><span class="tool-tag">NDK</span><span class="tool-tag">MVVM</span>
-                <span class="tool-tag">SDK Dev</span><span class="tool-tag">Multi-Module</span>
-                <span class="tool-tag">API Design</span><span class="tool-tag">Agile</span>
+                <span class="tool-tag" data-i18n="experience.sdk_dev">SDK Dev</span><span class="tool-tag" data-i18n="experience.multi_module">Multi-Module</span>
+                <span class="tool-tag" data-i18n="experience.api_design">API Design</span><span class="tool-tag" data-i18n="experience.agile">Agile</span>
               </div>
             </div>
           </div>
@@ -452,26 +470,26 @@
             <div class="timeline-card">
               <div class="timeline-header">
                 <a href="https://www.wrkspot.com/" target="_blank" class="timeline-company">WrkSpot</a>
-                <span class="timeline-period">Dec 2021 – Feb 2023 · Remote</span>
+                <span class="timeline-period" data-i18n="experience.dec_2021_feb_2023_remote">Dec 2021 – Feb 2023 · Remote</span>
               </div>
-              <div class="timeline-role">Senior Android Developer</div>
+              <div class="timeline-role" data-i18n="experience.senior_android_developer">Senior Android Developer</div>
               <div class="timeline-bullets">
-                <div class="timeline-bullet">Developed and maintained multiple Android applications, adhering to best
+                <div class="timeline-bullet" data-i18n="experience.developed_and_maintained_multiple_android">Developed and maintained multiple Android applications, adhering to best
                   practices and coding standards.</div>
-                <div class="timeline-bullet">Collaborated with product managers, designers, and other stakeholders to
+                <div class="timeline-bullet" data-i18n="experience.collaborated_with_product_managers_designe">Collaborated with product managers, designers, and other stakeholders to
                   gather requirements and translate them into technical specifications.</div>
-                <div class="timeline-bullet">Implemented new features and functionalities, ensuring scalability,
+                <div class="timeline-bullet" data-i18n="experience.implemented_new_features_and_functionaliti">Implemented new features and functionalities, ensuring scalability,
                   performance, and security.</div>
-                <div class="timeline-bullet">Optimized application performance, reducing load times by
+                <div class="timeline-bullet" data-i18n-html="experience.optimized_application_performance_reducing">Optimized application performance, reducing load times by
                   <strong>70%</strong> and increasing overall user satisfaction.
                 </div>
-                <div class="timeline-bullet">Conducted code reviews and provided constructive feedback to team members,
+                <div class="timeline-bullet" data-i18n="experience.conducted_code_reviews_and_provided">Conducted code reviews and provided constructive feedback to team members,
                   fostering a culture of continuous improvement.</div>
-                <div class="timeline-bullet">Resolved critical issues and bugs in a timely manner, maintaining high
+                <div class="timeline-bullet" data-i18n="experience.resolved_critical_issues_and_bugs">Resolved critical issues and bugs in a timely manner, maintaining high
                   levels of reliability and uptime.</div>
-                <div class="timeline-bullet">Assisted in updating applications on Google Play Console, ensuring
+                <div class="timeline-bullet" data-i18n="experience.assisted_in_updating_applications_on">Assisted in updating applications on Google Play Console, ensuring
                   compliance with platform requirements and smooth deployment processes.</div>
-                <div class="timeline-bullet">Actively participated in Agile development methodologies, including sprint
+                <div class="timeline-bullet" data-i18n="experience.actively_participated_in_agile_development">Actively participated in Agile development methodologies, including sprint
                   planning, daily stand-ups, and retrospectives.</div>
               </div>
               <div class="timeline-tools">
@@ -494,26 +512,26 @@
             <div class="timeline-card">
               <div class="timeline-header">
                 <a href="https://chatwise.co.uk/" target="_blank" class="timeline-company">ChatWise</a>
-                <span class="timeline-period">Sep 2020 – May 2022 · Remote</span>
+                <span class="timeline-period" data-i18n="experience.sep_2020_may_2022_remote">Sep 2020 – May 2022 · Remote</span>
               </div>
-              <div class="timeline-role">Senior Android Developer</div>
+              <div class="timeline-role" data-i18n="experience.senior_android_developer">Senior Android Developer</div>
               <div class="timeline-bullets">
-                <div class="timeline-bullet">Played a pivotal role in driving a high-impact project to success,
+                <div class="timeline-bullet" data-i18n="experience.played_a_pivotal_role_in">Played a pivotal role in driving a high-impact project to success,
                   demonstrating exceptional problem-solving skills and technical expertise.</div>
-                <div class="timeline-bullet">Addressed critical bugs and optimized application performance, ensuring a
+                <div class="timeline-bullet" data-i18n="experience.addressed_critical_bugs_and_optimized">Addressed critical bugs and optimized application performance, ensuring a
                   seamless user experience.</div>
-                <div class="timeline-bullet">Integrated advanced features, such as auto-playing video functionality
+                <div class="timeline-bullet" data-i18n="experience.integrated_advanced_features_such_as">Integrated advanced features, such as auto-playing video functionality
                   during post scrolls and innovative matching algorithms for randomized user pairings during timed
                   calls.</div>
-                <div class="timeline-bullet">Contributed significantly to enhancing the chat functionality, improving
+                <div class="timeline-bullet" data-i18n="experience.contributed_significantly_to_enhancing_the">Contributed significantly to enhancing the chat functionality, improving
                   user engagement and satisfaction.</div>
-                <div class="timeline-bullet">Took the initiative to recruit and onboard new team members, fostering a
+                <div class="timeline-bullet" data-i18n="experience.took_the_initiative_to_recruit">Took the initiative to recruit and onboard new team members, fostering a
                   collaborative and growth-oriented work environment.</div>
-                <div class="timeline-bullet">Demonstrated proficiency in Java and Kotlin, leveraging Android SDK and
+                <div class="timeline-bullet" data-i18n="experience.demonstrated_proficiency_in_java_and">Demonstrated proficiency in Java and Kotlin, leveraging Android SDK and
                   related tools to develop robust mobile applications.</div>
-                <div class="timeline-bullet">Conducted thorough code reviews and provided constructive feedback,
+                <div class="timeline-bullet" data-i18n="experience.conducted_thorough_code_reviews_and">Conducted thorough code reviews and provided constructive feedback,
                   ensuring adherence to best practices and coding standards.</div>
-                <div class="timeline-bullet">Actively participated in Agile development methodologies, including sprint
+                <div class="timeline-bullet" data-i18n="experience.actively_participated_in_agile_development">Actively participated in Agile development methodologies, including sprint
                   planning, daily stand-ups, and retrospectives.</div>
               </div>
               <div class="timeline-tools">
@@ -535,22 +553,22 @@
             <div class="timeline-card">
               <div class="timeline-header">
                 <a href="https://www.wippo.md/" target="_blank" class="timeline-company">Wippo</a>
-                <span class="timeline-period">Feb 2019 – Jul 2019 · Chisinau, Moldova</span>
+                <span class="timeline-period" data-i18n="experience.feb_2019_jul_2019_chisinau">Feb 2019 – Jul 2019 · Chisinau, Moldova</span>
               </div>
-              <div class="timeline-role">Android Developer</div>
+              <div class="timeline-role" data-i18n="experience.android_developer">Android Developer</div>
               <div class="timeline-bullets">
-                <div class="timeline-bullet">Developed and maintained multiple Android applications, adhering to best
+                <div class="timeline-bullet" data-i18n="experience.developed_and_maintained_multiple_android">Developed and maintained multiple Android applications, adhering to best
                   practices and coding standards.</div>
-                <div class="timeline-bullet">Collaborated with product managers, designers, and other stakeholders to
+                <div class="timeline-bullet" data-i18n="experience.collaborated_with_product_managers_designe">Collaborated with product managers, designers, and other stakeholders to
                   gather requirements and translate them into technical specifications.</div>
-                <div class="timeline-bullet">Implemented new features and functionalities, ensuring scalability,
+                <div class="timeline-bullet" data-i18n="experience.implemented_new_features_and_functionaliti">Implemented new features and functionalities, ensuring scalability,
                   performance, and security.</div>
-                <div class="timeline-bullet">Continuously updated skills and knowledge of industry trends to stay at the
+                <div class="timeline-bullet" data-i18n="experience.continuously_updated_skills_and_knowledge">Continuously updated skills and knowledge of industry trends to stay at the
                   forefront of Android development practices and technologies.</div>
               </div>
               <div class="timeline-tools">
                 <span class="tool-tag">Android</span><span class="tool-tag">Java</span>
-                <span class="tool-tag">Audio</span><span class="tool-tag">Google Maps</span>
+                <span class="tool-tag" data-i18n="experience.audio">Audio</span><span class="tool-tag">Google Maps</span>
               </div>
             </div>
           </div>
@@ -564,59 +582,59 @@
       <div class="section">
         <div class="section-header reveal">
           <span class="section-tag">04</span>
-          <h2 class="section-title">Testimonials</h2>
+          <h2 class="section-title" data-i18n="testimonials.testimonials">Testimonials</h2>
           <div class="section-line"></div>
         </div>
         <div class="testimonials-grid">
-          <div class="testimonial-card"><img src="/assets/img/reviews/review 1.png" alt="Review 1"
+          <div class="testimonial-card"><img src="/assets/img/reviews/review 1.png" alt="Review 1" data-i18n-attr="alt:alt.review" data-i18n-n="1"
               class="responsive-img" /></div>
-          <div class="testimonial-card"><img src="/assets/img/reviews/review 2.png" alt="Review 2"
+          <div class="testimonial-card"><img src="/assets/img/reviews/review 2.png" alt="Review 2" data-i18n-attr="alt:alt.review" data-i18n-n="2"
               class="responsive-img" /></div>
-          <div class="testimonial-card"><img src="/assets/img/reviews/review 3.png" alt="Review 3"
+          <div class="testimonial-card"><img src="/assets/img/reviews/review 3.png" alt="Review 3" data-i18n-attr="alt:alt.review" data-i18n-n="3"
               class="responsive-img" /></div>
-          <div class="testimonial-card"><img src="/assets/img/reviews/review 4.png" alt="Review 4"
+          <div class="testimonial-card"><img src="/assets/img/reviews/review 4.png" alt="Review 4" data-i18n-attr="alt:alt.review" data-i18n-n="4"
               class="responsive-img" /></div>
-          <div class="testimonial-card"><img src="/assets/img/reviews/review 5.png" alt="Review 5"
+          <div class="testimonial-card"><img src="/assets/img/reviews/review 5.png" alt="Review 5" data-i18n-attr="alt:alt.review" data-i18n-n="5"
               class="responsive-img" /></div>
-          <div class="testimonial-card"><img src="/assets/img/reviews/review 6.png" alt="Review 6"
+          <div class="testimonial-card"><img src="/assets/img/reviews/review 6.png" alt="Review 6" data-i18n-attr="alt:alt.review" data-i18n-n="6"
               class="responsive-img" /></div>
-          <div class="testimonial-card"><img src="/assets/img/reviews/review 7.png" alt="Review 7"
+          <div class="testimonial-card"><img src="/assets/img/reviews/review 7.png" alt="Review 7" data-i18n-attr="alt:alt.review" data-i18n-n="7"
               class="responsive-img" /></div>
-          <div class="testimonial-card"><img src="/assets/img/reviews/review 8.png" alt="Review 8"
+          <div class="testimonial-card"><img src="/assets/img/reviews/review 8.png" alt="Review 8" data-i18n-attr="alt:alt.review" data-i18n-n="8"
               class="responsive-img" /></div>
-          <div class="testimonial-card"><img src="/assets/img/reviews/review 9.png" alt="Review 9"
+          <div class="testimonial-card"><img src="/assets/img/reviews/review 9.png" alt="Review 9" data-i18n-attr="alt:alt.review" data-i18n-n="9"
               class="responsive-img" /></div>
-          <div class="testimonial-card"><img src="/assets/img/reviews/review 10.png" alt="Review 10"
+          <div class="testimonial-card"><img src="/assets/img/reviews/review 10.png" alt="Review 10" data-i18n-attr="alt:alt.review" data-i18n-n="10"
               class="responsive-img" /></div>
-          <div class="testimonial-card"><img src="/assets/img/reviews/review 11.png" alt="Review 11"
+          <div class="testimonial-card"><img src="/assets/img/reviews/review 11.png" alt="Review 11" data-i18n-attr="alt:alt.review" data-i18n-n="11"
               class="responsive-img" /></div>
-          <div class="testimonial-card"><img src="/assets/img/reviews/review 12.png" alt="Review 12"
+          <div class="testimonial-card"><img src="/assets/img/reviews/review 12.png" alt="Review 12" data-i18n-attr="alt:alt.review" data-i18n-n="12"
               class="responsive-img" /></div>
-          <div class="testimonial-card"><img src="/assets/img/reviews/review 13.png" alt="Review 13"
+          <div class="testimonial-card"><img src="/assets/img/reviews/review 13.png" alt="Review 13" data-i18n-attr="alt:alt.review" data-i18n-n="13"
               class="responsive-img" /></div>
-          <div class="testimonial-card"><img src="/assets/img/reviews/review 14.png" alt="Review 14"
+          <div class="testimonial-card"><img src="/assets/img/reviews/review 14.png" alt="Review 14" data-i18n-attr="alt:alt.review" data-i18n-n="14"
               class="responsive-img" /></div>
-          <div class="testimonial-card"><img src="/assets/img/reviews/review 15.png" alt="Review 15"
+          <div class="testimonial-card"><img src="/assets/img/reviews/review 15.png" alt="Review 15" data-i18n-attr="alt:alt.review" data-i18n-n="15"
               class="responsive-img" /></div>
-          <div class="testimonial-card"><img src="/assets/img/reviews/review 16.png" alt="Review 16"
+          <div class="testimonial-card"><img src="/assets/img/reviews/review 16.png" alt="Review 16" data-i18n-attr="alt:alt.review" data-i18n-n="16"
               class="responsive-img" /></div>
-          <div class="testimonial-card"><img src="/assets/img/reviews/review 17.png" alt="Review 17"
+          <div class="testimonial-card"><img src="/assets/img/reviews/review 17.png" alt="Review 17" data-i18n-attr="alt:alt.review" data-i18n-n="17"
               class="responsive-img" /></div>
-          <div class="testimonial-card"><img src="/assets/img/reviews/review 19.png" alt="Review 19"
+          <div class="testimonial-card"><img src="/assets/img/reviews/review 19.png" alt="Review 19" data-i18n-attr="alt:alt.review" data-i18n-n="19"
               class="responsive-img" /></div>
-          <div class="testimonial-card"><img src="/assets/img/reviews/review 20.png" alt="Review 20"
+          <div class="testimonial-card"><img src="/assets/img/reviews/review 20.png" alt="Review 20" data-i18n-attr="alt:alt.review" data-i18n-n="20"
               class="responsive-img" /></div>
-          <div class="testimonial-card"><img src="/assets/img/reviews/review 21.png" alt="Review 21"
+          <div class="testimonial-card"><img src="/assets/img/reviews/review 21.png" alt="Review 21" data-i18n-attr="alt:alt.review" data-i18n-n="21"
               class="responsive-img" /></div>
-          <div class="testimonial-card"><img src="/assets/img/reviews/review 22.png" alt="Review 22"
+          <div class="testimonial-card"><img src="/assets/img/reviews/review 22.png" alt="Review 22" data-i18n-attr="alt:alt.review" data-i18n-n="22"
               class="responsive-img" /></div>
-          <div class="testimonial-card"><img src="/assets/img/reviews/review 23.png" alt="Review 23"
+          <div class="testimonial-card"><img src="/assets/img/reviews/review 23.png" alt="Review 23" data-i18n-attr="alt:alt.review" data-i18n-n="23"
               class="responsive-img" /></div>
-          <div class="testimonial-card"><img src="/assets/img/reviews/review 24.png" alt="Review 24"
+          <div class="testimonial-card"><img src="/assets/img/reviews/review 24.png" alt="Review 24" data-i18n-attr="alt:alt.review" data-i18n-n="24"
               class="responsive-img" /></div>
-          <div class="testimonial-card"><img src="/assets/img/reviews/review 25.png" alt="Review 25"
+          <div class="testimonial-card"><img src="/assets/img/reviews/review 25.png" alt="Review 25" data-i18n-attr="alt:alt.review" data-i18n-n="25"
               class="responsive-img" /></div>
-          <div class="testimonial-card"><img src="/assets/img/reviews/review 26.png" alt="Review 26"
+          <div class="testimonial-card"><img src="/assets/img/reviews/review 26.png" alt="Review 26" data-i18n-attr="alt:alt.review" data-i18n-n="26"
               class="responsive-img" /></div>
         </div>
       </div>
@@ -627,7 +645,7 @@
       <div class="section">
         <div class="section-header reveal">
           <span class="section-tag">05</span>
-          <h2 class="section-title">Projects</h2>
+          <h2 class="section-title" data-i18n="projects.projects">Projects</h2>
           <div class="section-line"></div>
         </div>
         <div class="projects-grid">
@@ -641,7 +659,7 @@
             </div>
             <div class="project-body">
               <h3 class="project-name">MaterialUiUx</h3>
-              <p class="project-desc">A marketplace for UI Kits with Android Studio source code. Find premium UI
+              <p class="project-desc" data-i18n="projects.a_marketplace_for_ui_kits">A marketplace for UI Kits with Android Studio source code. Find premium UI
                 components and templates with full source.</p>
               <div class="project-tags">
                 <span class="skill-tag">Android</span>
@@ -652,7 +670,7 @@
               </div>
               <div class="project-footer">
                 <a href="https://materialuiux.com/" target="_blank" class="project-link">
-                  Visit Site <i class="fa-solid fa-arrow-right"></i>
+                  <span data-i18n="projects.visit_site">Visit Site</span> <i class="fa-solid fa-arrow-right"></i>
                 </a>
               </div>
             </div>
@@ -667,7 +685,7 @@
             </div>
             <div class="project-body">
               <h3 class="project-name">Rkiez</h3>
-              <p class="project-desc">Your Productivity Powerhouse App 🚀 — Focus sessions, tasks, statistics, habit &
+              <p class="project-desc" data-i18n="projects.your_productivity_powerhouse_app_focus">Your Productivity Powerhouse App 🚀 — Focus sessions, tasks, statistics, habit &
                 mood tracking all in one place.</p>
               <div class="project-tags">
                 <span class="skill-tag">Android</span>
@@ -678,7 +696,7 @@
               <div class="project-footer">
                 <a href="https://play.google.com/store/apps/details?id=app.focus.session" target="_blank"
                   class="project-link">
-                  Play Store <i class="fa-solid fa-arrow-right"></i>
+                  <span data-i18n="projects.play_store">Play Store</span> <i class="fa-solid fa-arrow-right"></i>
                 </a>
               </div>
             </div>
@@ -693,7 +711,7 @@
             </div>
             <div class="project-body">
               <h3 class="project-name">RvewX</h3>
-              <p class="project-desc">Go-to platform for top influencer, app, and website reviews. Features SEO
+              <p class="project-desc" data-i18n="projects.go_to_platform_for_top">Go-to platform for top influencer, app, and website reviews. Features SEO
                 optimization, SSR, and fast server rendering.</p>
               <div class="project-tags">
                 <span class="skill-tag">Angular</span>
@@ -706,7 +724,7 @@
               </div>
               <div class="project-footer">
                 <a href="https://rvewx.com" target="_blank" class="project-link">
-                  Visit Site <i class="fa-solid fa-arrow-right"></i>
+                  <span data-i18n="projects.visit_site">Visit Site</span> <i class="fa-solid fa-arrow-right"></i>
                 </a>
               </div>
             </div>
@@ -720,20 +738,20 @@
               <div class="project-image-overlay"></div>
             </div>
             <div class="project-body">
-              <h3 class="project-name">Baghdad Menu</h3>
-              <p class="project-desc">A smart QR-based digital menu platform for Iraqi restaurants. Enables real-time
+              <h3 class="project-name" data-i18n="projects.baghdad_menu">Baghdad Menu</h3>
+              <p class="project-desc" data-i18n="projects.a_smart_qr_based_digital">A smart QR-based digital menu platform for Iraqi restaurants. Enables real-time
                 menu
                 updates, SEO optimization, and a seamless no-app experience for customers.</p>
               <div class="project-tags">
                 <span class="skill-tag">Laravel</span>
                 <span class="skill-tag">MySQL</span>
-                <span class="skill-tag">QR Code</span>
+                <span class="skill-tag" data-i18n="projects.qr_code">QR Code</span>
                 <span class="skill-tag">SEO</span>
                 <span class="skill-tag">PWA</span>
               </div>
               <div class="project-footer">
                 <a href="https://baghdadmenu.com/" target="_blank" class="project-link">
-                  Visit Site <i class="fa-solid fa-arrow-right"></i>
+                  <span data-i18n="projects.visit_site">Visit Site</span> <i class="fa-solid fa-arrow-right"></i>
                 </a>
               </div>
             </div>
@@ -748,65 +766,65 @@
       <div class="section">
         <div class="section-header reveal">
           <span class="section-tag">06</span>
-          <h2 class="section-title">Education</h2>
+          <h2 class="section-title" data-i18n="education.education">Education</h2>
           <div class="section-line"></div>
         </div>
         <div class="education-grid">
 
           <div class="edu-card reveal">
-            <div class="edu-institution">Technical University of Moldova</div>
-            <div class="edu-location">📍 Chișinău, Moldova</div>
-            <div class="edu-degree">Faculty of Electronics and Telecommunications</div>
+            <div class="edu-institution" data-i18n="education.technical_university_of_moldova">Technical University of Moldova</div>
+            <div class="edu-location" data-i18n="education.chi_in_u_moldova">📍 Chișinău, Moldova</div>
+            <div class="edu-degree" data-i18n="education.faculty_of_electronics_and_telecommunicati">Faculty of Electronics and Telecommunications</div>
           </div>
 
           <div class="edu-card reveal reveal-delay-1">
-            <div class="edu-institution">Cisco Networking Academy</div>
-            <div class="edu-location">📍 Chișinău, Moldova</div>
-            <div class="edu-degree">Associate's Degree — Network and System Administration</div>
-            <img src="/assets/img/certifications/cert0.jpg" alt="Cisco cert" class="edu-cert-img" loading="lazy" />
+            <div class="edu-institution" data-i18n="education.cisco_networking_academy">Cisco Networking Academy</div>
+            <div class="edu-location" data-i18n="education.chi_in_u_moldova">📍 Chișinău, Moldova</div>
+            <div class="edu-degree" data-i18n="education.associate_s_degree_network_and">Associate's Degree — Network and System Administration</div>
+            <img src="/assets/img/certifications/cert0.jpg" alt="Cisco cert" data-i18n-attr="alt:alt.cert_cisco" class="edu-cert-img" loading="lazy" />
           </div>
 
           <div class="edu-card reveal reveal-delay-2">
-            <div class="edu-institution">Java 17 Masterclass</div>
+            <div class="edu-institution" data-i18n="education.java_17_masterclass">Java 17 Masterclass</div>
             <div class="edu-location">🎓 Udemy</div>
-            <img src="/assets/img/certifications/cert4.jpg" alt="Java 17 cert" class="edu-cert-img" loading="lazy" />
+            <img src="/assets/img/certifications/cert4.jpg" alt="Java 17 cert" data-i18n-attr="alt:alt.cert_java17" class="edu-cert-img" loading="lazy" />
           </div>
 
           <div class="edu-card reveal reveal-delay-3">
-            <div class="edu-institution">Spring Boot 3, Spring 6 & Hibernate for Beginners</div>
+            <div class="edu-institution" data-i18n="education.spring_boot_3_spring_6">Spring Boot 3, Spring 6 & Hibernate for Beginners</div>
             <div class="edu-location">🎓 Udemy</div>
-            <img src="/assets/img/certifications/cert3.jpg" alt="Spring Boot cert" class="edu-cert-img"
+            <img src="/assets/img/certifications/cert3.jpg" alt="Spring Boot cert" data-i18n-attr="alt:alt.cert_spring" class="edu-cert-img"
               loading="lazy" />
           </div>
 
           <div class="edu-card reveal reveal-delay-1">
-            <div class="edu-institution">Data Structures & Algorithms: Deep Dive Using Java</div>
+            <div class="edu-institution" data-i18n="education.data_structures_algorithms_deep_dive">Data Structures & Algorithms: Deep Dive Using Java</div>
             <div class="edu-location">🎓 Udemy</div>
-            <img src="/assets/img/certifications/cert1.jpg" alt="DSA cert" class="edu-cert-img" loading="lazy" />
+            <img src="/assets/img/certifications/cert1.jpg" alt="DSA cert" data-i18n-attr="alt:alt.cert_dsa_java" class="edu-cert-img" loading="lazy" />
           </div>
 
           <div class="edu-card reveal reveal-delay-2">
-            <div class="edu-institution">Data Structures + Algorithms</div>
+            <div class="edu-institution" data-i18n="education.data_structures_algorithms">Data Structures + Algorithms</div>
             <div class="edu-location">🎓 Udemy</div>
-            <img src="/assets/img/certifications/cert2.jpg" alt="DS cert" class="edu-cert-img" loading="lazy" />
+            <img src="/assets/img/certifications/cert2.jpg" alt="DS cert" data-i18n-attr="alt:alt.cert_dsa" class="edu-cert-img" loading="lazy" />
           </div>
 
           <div class="edu-card reveal reveal-delay-3">
-            <div class="edu-institution">iOS &amp; Swift — Complete iOS App Development Bootcamp</div>
+            <div class="edu-institution" data-i18n="education.ios_swift_complete_ios_app">iOS &amp; Swift — Complete iOS App Development Bootcamp</div>
             <div class="edu-location">🎓 Udemy</div>
-            <img src="/assets/img/certifications/cert5.jpg" alt="iOS cert" class="edu-cert-img" loading="lazy" />
+            <img src="/assets/img/certifications/cert5.jpg" alt="iOS cert" data-i18n-attr="alt:alt.cert_ios" class="edu-cert-img" loading="lazy" />
           </div>
 
           <div class="edu-card reveal reveal-delay-4">
-            <div class="edu-institution">Full Stack: Angular and Java Spring Boot E-Commerce</div>
+            <div class="edu-institution" data-i18n="education.full_stack_angular_and_java">Full Stack: Angular and Java Spring Boot E-Commerce</div>
             <div class="edu-location">🎓 Udemy</div>
-            <img src="/assets/img/certifications/cert6.jpg" alt="Full stack cert" class="edu-cert-img" loading="lazy" />
+            <img src="/assets/img/certifications/cert6.jpg" alt="Full stack cert" data-i18n-attr="alt:alt.cert_fullstack" class="edu-cert-img" loading="lazy" />
           </div>
 
           <div class="edu-card reveal reveal-delay-1">
-            <div class="edu-institution">Deploy Java Spring Apps Online to Amazon Cloud (AWS)</div>
+            <div class="edu-institution" data-i18n="education.deploy_java_spring_apps_online">Deploy Java Spring Apps Online to Amazon Cloud (AWS)</div>
             <div class="edu-location">🎓 Udemy</div>
-            <img src="/assets/img/certifications/cert7.jpg" alt="AWS cert" class="edu-cert-img" loading="lazy" />
+            <img src="/assets/img/certifications/cert7.jpg" alt="AWS cert" data-i18n-attr="alt:alt.cert_aws" class="edu-cert-img" loading="lazy" />
           </div>
 
         </div>
@@ -818,20 +836,20 @@
       <div class="section">
         <div class="section-header reveal">
           <span class="section-tag">07</span>
-          <h2 class="section-title">Get In Touch</h2>
+          <h2 class="section-title" data-i18n="hero.get_in_touch">Get In Touch</h2>
           <div class="section-line"></div>
         </div>
         <div class="contact-wrapper">
           <div class="reveal">
-            <h3 class="contact-heading">Let's build something <span>great together.</span></h3>
-            <p class="contact-subtext">I'm always open to discussing new projects, creative ideas, or opportunities to
+            <h3 class="contact-heading" data-i18n-html="contact.let_s_build_something_great">Let's build something <span>great together.</span></h3>
+            <p class="contact-subtext" data-i18n="contact.i_m_always_open_to">I'm always open to discussing new projects, creative ideas, or opportunities to
               be part of your vision. Feel free to reach out!</p>
           </div>
           <div class="contact-links reveal reveal-delay-1">
             <a href="mailto:alsudanimohammed1@gmail.com" class="contact-link">
               <div class="contact-link-icon"><i class="fa-solid fa-envelope"></i></div>
               <div class="contact-link-info">
-                <h4>Email</h4>
+                <h4 data-i18n="contact.email">Email</h4>
                 <p>alsudanimohammed0@gmail.com</p>
               </div>
             </a>
@@ -857,7 +875,7 @@
   </div><!-- end main-content -->
 
   <footer>
-    <div class="footer-text">© 2026 <span>Mohammed Alsudani</span>. Crafted with ❤️</div>
+    <div class="footer-text" data-i18n-html="footer.2026_mohammed_alsudani_crafted_with">© 2026 <span data-i18n="sidebar.mohammed_alsudani">Mohammed Alsudani</span>. Crafted with ❤️</div>
   </footer>
 
   <div class="lightbox-overlay" id="lightbox">
@@ -865,6 +883,7 @@
     <img class="lightbox-img" id="lightbox-img" src="" alt="" />
   </div>
 
+  <script src="/assets/js/i18n.js"></script>
   <script src="/assets/js/main.js"></script>
 
 </body>

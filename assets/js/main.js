@@ -191,3 +191,118 @@ lightbox.addEventListener('click', e => {
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeLightbox();
 });
+
+/* =========================================================
+   i18n — tiny string-resource loader (like Android strings.xml)
+   HTML:  data-i18n="key"                 -> element.textContent
+          data-i18n-html="key"            -> element.innerHTML (for text with <strong>, <span>, <br>)
+          data-i18n-attr="attr:key;..."   -> attributes (alt, aria-label, content ...)
+          data-i18n-n="3"                 -> fills {n} in the string
+   Files: /assets/i18n/en.json, /assets/i18n/ar.json
+   Add a language: add a JSON file and one entry in LANGS.
+   ========================================================= */
+(function () {
+  var LANGS = { en: { dir: 'ltr' }, ar: { dir: 'rtl' } };
+  var root = document.documentElement;
+  var cache = {};
+  var current = window.__LANG || 'en';
+
+  function load(lang) {
+    if (cache[lang]) return Promise.resolve(cache[lang]);
+    return fetch('/assets/i18n/' + lang + '.json')
+      .then(function (r) { if (!r.ok) throw new Error(lang + '.json: HTTP ' + r.status); return r.json(); })
+      .then(function (d) { return (cache[lang] = d); });
+  }
+
+  function warn(key) { console.warn('[i18n] missing key:', key); }
+
+  function apply(strings) {
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var k = el.getAttribute('data-i18n');
+      if (k in strings) el.textContent = strings[k]; else warn(k);
+    });
+    document.querySelectorAll('[data-i18n-html]').forEach(function (el) {
+      var k = el.getAttribute('data-i18n-html');
+      if (k in strings) el.innerHTML = strings[k]; else warn(k);
+    });
+    document.querySelectorAll('[data-i18n-attr]').forEach(function (el) {
+      el.getAttribute('data-i18n-attr').split(';').forEach(function (pair) {
+        var i = pair.indexOf(':');
+        var attr = pair.slice(0, i).trim(), k = pair.slice(i + 1).trim();
+        if (!(k in strings)) return warn(k);
+        el.setAttribute(attr, String(strings[k]).replace('{n}', el.getAttribute('data-i18n-n') || ''));
+      });
+    });
+  }
+
+  /* RTL: mirror the desktop layout (sidebar on the right, content offset from the right).
+     Measured at runtime so it works with whatever sidebar width style.css uses. */
+  function fixLayout() {
+    var sb = document.getElementById('sidebar');
+    var targets = [document.querySelector('.main-content'), document.querySelector('footer')];
+    var rtl = root.dir === 'rtl', desktop = window.innerWidth > 900;
+    targets.forEach(function (t) {
+      if (!t) return;
+      t.style.marginLeft = rtl && desktop ? '0' : '';
+      t.style.marginRight = rtl && desktop && sb ? sb.offsetWidth + 'px' : '';
+    });
+  }
+  window.addEventListener('resize', fixLayout);
+
+  /* Language button: copy the theme toggle's look, make it a bit smaller, centre it right below the toggle */
+  function placeLangBtn() {
+    var theme = document.getElementById('theme-toggle'), b = document.getElementById('lang-toggle');
+    if (!theme || !b) return;
+    var r = theme.getBoundingClientRect();
+    if (!r.width) return;
+    var cs = getComputedStyle(theme), size = Math.round(Math.max(28, r.width * 0.82));
+    ['backgroundColor', 'backgroundImage', 'boxShadow', 'color', 'backdropFilter',
+     'borderTopWidth', 'borderTopStyle', 'borderTopColor', 'borderTopLeftRadius'].forEach(function (p) {
+      if (cs[p]) b.style[p] = cs[p];
+    });
+    b.style.borderWidth = cs.borderTopWidth; b.style.borderStyle = cs.borderTopStyle; b.style.borderColor = cs.borderTopColor;
+    b.style.borderRadius = cs.borderTopLeftRadius;
+    b.style.width = b.style.height = size + 'px';
+    b.style.right = 'auto';
+    b.style.top = Math.round(r.bottom + 8) + 'px';
+    b.style.left = Math.round(r.left + (r.width - size) / 2) + 'px';
+  }
+  var themeBtn = document.getElementById('theme-toggle');
+  if (themeBtn) themeBtn.addEventListener('click', function () { setTimeout(placeLangBtn, 80); });
+  window.addEventListener('resize', placeLangBtn);
+  window.addEventListener('load', placeLangBtn);
+
+  function setLang(lang, persist) {
+    if (!LANGS[lang]) lang = 'en';
+    return load(lang).then(function (strings) {
+      current = lang;
+      root.lang = lang;
+      root.dir = LANGS[lang].dir;
+      apply(strings);
+      fixLayout();
+      placeLangBtn();
+      if (persist) { try { localStorage.setItem('lang', lang); } catch (e) {} }
+      document.dispatchEvent(new CustomEvent('i18n:change', { detail: { lang: lang, strings: strings } }));
+    }).catch(function (err) {
+      console.error('[i18n]', err);
+    }).then(function () {
+      root.classList.remove('i18n-loading');
+    });
+  }
+
+  window.I18N = {
+    get lang() { return current; },
+    t: function (key) { var s = cache[current]; return s && key in s ? s[key] : key; },
+    setLang: setLang,
+    ready: null
+  };
+
+  var btn = document.getElementById('lang-toggle');
+  if (btn) btn.addEventListener('click', function () {
+    setLang(current === 'ar' ? 'en' : 'ar', true);
+  });
+
+  placeLangBtn();
+  window.I18N.ready = setLang(current, false);
+  setTimeout(function () { root.classList.remove('i18n-loading'); }, 2500); // fail-safe
+})();
