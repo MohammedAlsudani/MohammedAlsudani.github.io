@@ -192,15 +192,7 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeLightbox();
 });
 
-/* =========================================================
-   i18n — tiny string-resource loader (like Android strings.xml)
-   HTML:  data-i18n="key"                 -> element.textContent
-          data-i18n-html="key"            -> element.innerHTML (for text with <strong>, <span>, <br>)
-          data-i18n-attr="attr:key;..."   -> attributes (alt, aria-label, content ...)
-          data-i18n-n="3"                 -> fills {n} in the string
-   Files: /assets/i18n/en.json, /assets/i18n/ar.json
-   Add a language: add a JSON file and one entry in LANGS.
-   ========================================================= */
+
 (function () {
   var LANGS = { en: { dir: 'ltr' }, ar: { dir: 'rtl' } };
   var root = document.documentElement;
